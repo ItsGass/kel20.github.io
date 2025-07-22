@@ -87,68 +87,81 @@
             padding-bottom: 10px;
             margin-bottom: 30px;
         }
+        .navbar-logo {
+  max-height: 50px !important;
+  height: auto !important;
+  width: auto !important;
+}
     </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <!-- Logo dan Brand dengan alignment presisi -->
+        <div class="d-flex align-items-center logo-brand-container">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+            <a class="navbar-brand ms-2" href="#">
+                <span class="kkm-text">KKM</span>
+                <span class="kkm-number">20</span>
+            </a>
         </div>
-    </nav>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                        Luaran
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="berita.html">Berita</a></li>
+                        <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                        <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                        Proker
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
+                        <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
+                        <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
+                        <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
+                        <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
+                        <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
+                        <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
+                        <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                        Dokumentasi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
     <!-- Daftar Berita -->
@@ -167,7 +180,7 @@
                     <div class="p-4">
                         <span class="news-category">KKM</span>
                         <h4>Semangat Mahasiswa KKM Kelompok 20 : Mengabdi, Belajar, Dan Berkarya Di Kelurahan Suralaya Kecamatan Pulomerak</h4>
-                        <p class="news-date">12 Juli 2023</p>
+                        <p class="news-date">12 Juli 2025</p>
                         <p>Mahasiswa Universitas Bina Bangsa dari KKM Kelompok 20 melaksanakan Kuliah Kerja Mahasiswa (KKM) di Kelurahan Suralaya, 
                           Kecamatan Pulomerak, Kota Cilegon, Banten. Program ini bertujuan untuk mengimplementasikan ilmu pengetahuan melalui pengabdian masyarakat di berbagai bidang....</p>
                         <a href="https://www.kompasiana.com/dityobagaswicaksono0340/687265ee34777c04326d81d2/semangat-mahasiswa-kkm-kelompok-20-mengabdi-belajar-dan-berkarya-di-kelurahan-suralaya-kecamatan-pulomerak" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
@@ -184,9 +197,41 @@
                         <span class="news-category">Teknologi Tepat Guna & Informasi</span>
                         <span class="news-category">Sosial, Budaya & Pemberdayaan Masyarakat</span>
                         <h4>Mahasiswa KKM Mengunjungi Tempat Wisata Bukit Teletubbies Untuk mempromosikan tempat wisata tersebut</h4>
-                        <p class="news-date">12 Juli 2023</p>
+                        <p class="news-date">12 Juli 2025</p>
                         <p>Mahasiswa peserta Kuliah Kerja Mahasiswa (KKM) dari Universitas Bina Bangsa melakukan kunjungan ke Bukit Teletubbies, sebuah destinasi wisata alam di wilayah Kelurahan Suralaya, Kecamatan Pulomerak, Kota Cilegon. Kegiatan ini merupakan bagian dari program pengabdian masyarakat untuk mendukung pengembangan pariwisata lokal.....</p>
                         <a href="https://www.kompasiana.com/dityobagaswicaksono0340/68747b81c925c40e2e00fa82/mahasiswa-kkm-mengunjungi-tempat-wisata-bukit-teletubbies-untuk-mempromosikan-tempat-wisata-tersebut" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Berita 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="news-card">
+                    <img src="images/sma.jpg" class="news-img" alt="Kegiatan KKM">
+                    <div class="p-4">
+                        <span class="news-category">Teknologi Tepat Guna & Informasi</span>
+                        <span class="news-category">Pendidikan</span>
+                        <h4>SMA Negri 4 Cilegon Gelar MPLS : Edukasi Bahaya Narkoba Dan Latihan Baris-Berbaris</h4>
+                        <p class="news-date">17 Juli 2025</p>
+                        <p>SMA Negeri 4 Cilegon menggelar kegiatan Masa Pengenalan Lingkungan Sekolah (MPLS) selama tiga hari untuk siswa baru tahun ajaran 2025/2026 dengan fokus pada edukasi bahaya narkoba bersama BNN Kota Cilegon dan pelatihan baris-berbaris (PBB) yang dibimbing oleh TNI dan Polri. Kegiatan ini bertujuan membentuk karakter, meningkatkan kedisiplinan, serta memberikan pemahaman kepada siswa tentang pentingnya menjauhi narkoba dan menjaga kekompakan......</p>
+                        <a href="https://www.kompasiana.com/dityobagaswicaksono0340/68747b81c925c40e2e00fa82/mahasiswa-kkm-mengunjungi-tempat-wisata-bukit-teletubbies-untuk-mempromosikan-tempat-wisata-tersebut" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Berita 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="news-card">
+                    <img src="images/narkoba.jpg" class="news-img" alt="Kegiatan KKM">
+                    <div class="p-4">
+                        <span class="news-category">Teknologi Tepat Guna & Informasi</span>
+                        <span class="news-category">Kesehatan</span>
+                        <h4>SMPN 10 Kota Cilegon : Mahasiswa KKM (Kuliah Kerja Mahasiswa) Melakukan Penyuluhan Tentang Kenakalan Remaja Dan Narkoba</h4>
+                        <p class="news-date">20 juli 2025</p>
+                        <p>Mahasiswa Kuliah Kerja Mahasiswa (KKM) di SMPN 10 Kota Cilegon mengadakan penyuluhan tentang kenakalan remaja dan bahaya narkoba sebagai bagian dari program pengabdian masyarakat. Kegiatan ini bertujuan memberikan pemahaman kepada para siswa mengenai dampak negatif dari perilaku menyimpang dan penyalahgunaan narkoba, serta mendorong mereka untuk membentuk karakter yang positif dan bertanggung jawab dalam menjalani masa remaja......</p>
+                        <a href="https://www.kompasiana.com/dityobagaswicaksono0340/687bddf034777c6b1907e222/smpn-10-kota-cilegon-mahasiswa-kkm-kuliah-kerja-mahasiswa-melakukan-penyuluhan-tentang-kenakalan-remaja-dan-narkoba" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
                     </div>
                 </div>
             </div>
