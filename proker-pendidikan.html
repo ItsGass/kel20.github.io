@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berita KKM - Kelompok 20</title>
+    <title>Artikel KKM - Kelompok 20</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -26,52 +26,78 @@
         }
         
         .custom-navbar {
-            background-color: var(--primary-color) !important;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        
-        .nav-link {
-            font-weight: 500;
-            padding: 8px 15px !important;
-        }
-        
-        .dropdown-menu {
-            border: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        background-color: var(--primary-color) !important;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .news-card {
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        padding: 8px 15px !important;
+      }
+
+      .navbar-logo {
+  max-height: 50px !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+        /* Card Custom Style */
+        .activity-card {
             background-color: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
             transition: all 0.3s;
             overflow: hidden;
+            height: 100%;
+            border: none;
         }
         
-        .news-card:hover {
+        .activity-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
-        .news-img {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
+        .card-img-container {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
         }
         
-        .news-date {
+        .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .activity-card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-date {
             color: #6c757d;
             font-size: 0.9rem;
+            margin-bottom: 8px;
         }
         
-        .news-category {
+        .card-category {
             background-color: var(--secondary-color);
             color: white;
             padding: 3px 10px;
@@ -81,11 +107,30 @@
             margin-bottom: 10px;
         }
         
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        
+        .card-text {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        
         .page-title {
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
             margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .card-img-container {
+                height: 160px;
+            }
         }
     </style>
 </head>
@@ -100,7 +145,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
@@ -150,75 +195,213 @@
         </div>
     </nav>
 
-
-    <!-- Daftar Proker -->
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1 class="page-title">PROGRAM KERJA PENDIDIKAN</h1>
-    </div>
-  </div>
-
-  
-
-  <!-- Grid Card -->
-  <div class="row">
-    <!-- Card 1 -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="news-card">
-        
-        <div class="p-4">
-          <span class="news-category">Pendidikan & Keterampilan</span>
-          <h4 class="mb-1">Penyuluhan Gizi Seimbang</h4>
-          <p class="news-date">25 Juli 2025</p>
-          <p>Kegiatan edukasi gizi untuk anak-anak dan ibu rumah tangga agar memahami pola makan sehat dan seimbang.</p>
-          <a href="pendidikan1.html" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+    <!-- Content Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="page-title">Program Kerja Bidang Pendidikan</h1>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="news-card">
         
-        <div class="p-4">
-          <span class="news-category">Keagamaan</span>
-          <h4 class="mb-1">Ngaji Bersama Anak-Anak</h4>
-          <p class="news-date">27 Juli 2025</p>
-          <p>Kegiatan pembelajaran dasar Al-Qur’an dan doa harian bersama anak-anak setiap sore di masjid setempat.</p>
-          <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="images/pen1.jpg" class="card-img-top" alt="Perizinan Sekolah">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Senin, 14 Juli 2025</p>
+                        <h5 class="card-title">Perizinan ke SDN Suralaya</h5>
+                        <p class="card-text">Melakukan perizinan ke SDN Suralaya untuk menjadi guru pendamping dalam kegiatan belajar mengajar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?teacher" class="card-img-top" alt="Guru Pendamping">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Senin, 14 Juli 2025</p>
+                        <h5 class="card-title">Perizinan ke SDN Pringori</h5>
+                        <p class="card-text">Melakukan perizinan untuk menjadi Guru Pendamping di SDN Pringori membantu Kegiatan Belajar Mengajar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?english" class="card-img-top" alt="Bimbel Bahasa Inggris">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Senin, 14 Juli 2025</p>
+                        <h5 class="card-title">Bimbel Bahasa Inggris</h5>
+                        <p class="card-text">Bimbingan Belajar dengan materi "Alfabet and Vocabulary" untuk anak-anak di lingkungan sekitar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?school" class="card-img-top" alt="Perizinan SMP">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Selasa, 15 Juli 2025</p>
+                        <h5 class="card-title">Perizinan ke SMPN 10 Cilegon</h5>
+                        <p class="card-text">Melakukan perizinan untuk membantu sebagai guru pendamping di SMPN 10 Cilegon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?workshop" class="card-img-top" alt="MPLS">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Rabu, 16 Juli 2025</p>
+                        <h5 class="card-title">Mengisi Materi MPLS</h5>
+                        <p class="card-text">Mengisi materi tentang "7 Kebiasaan Indonesia Hebat" dalam kegiatan MPLS.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?arabic" class="card-img-top" alt="Bimbel Bahasa Arab">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Rabu, 16 Juli 2025</p>
+                        <h5 class="card-title">Bimbel Bahasa Arab</h5>
+                        <p class="card-text">Bimbingan Belajar Bahasa Arab dengan materi "Anggota Keluarga".</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 7 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?assessment" class="card-img-top" alt="Asesmen Diagnostik">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Kamis, 17 Juli 2025</p>
+                        <h5 class="card-title">Asesmen Diagnostik</h5>
+                        <p class="card-text">Membantu asesmen diagnostik kelas 3 di SDN Pringori untuk mengetahui gaya belajar siswa.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 8 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?ceremony" class="card-img-top" alt="Penutupan MPLS">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Kamis, 17 Juli 2025</p>
+                        <h5 class="card-title">Penutupan MPLS SMPN 10 Cilegon</h5>
+                        <p class="card-text">Ikut serta dalam acara Penutupan MPLS di SMPN 10 Cilegon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 9 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?drugs" class="card-img-top" alt="Penyuluhan Narkotika">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <span class="card-category">Kesehatan</span>
+                        <p class="card-date">Kamis, 17 Juli 2025</p>
+                        <h5 class="card-title">Penyuluhan Narkotika</h5>
+                        <p class="card-text">Meliput Kegiatan MPLS SMAN 4 Cilegon dengan materi Penyuluhan Narkotika oleh BNN Kota Cilegon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 10 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?english-class" class="card-img-top" alt="Bimbel Bahasa Inggris">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Kamis, 17 Juli 2025</p>
+                        <h5 class="card-title">Bimbel Bahasa Inggris</h5>
+                        <p class="card-text">Bimbingan Belajar Bahasa Inggris dengan Materi "Parts Of Body".</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 11 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?teaching" class="card-img-top" alt="Guru Pendamping">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Jumat, 18 Juli 2025</p>
+                        <h5 class="card-title">Guru Pendamping Kelas 1</h5>
+                        <p class="card-text">Mendampingi Guru untuk mengajar siswa kelas 1 di SDN Pringori.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 12 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?cleaning" class="card-img-top" alt="Kerja Bakti">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <span class="card-category">Sosial</span>
+                        <p class="card-date">Jumat, 18 Juli 2025</p>
+                        <h5 class="card-title">Kerja Bakti</h5>
+                        <p class="card-text">Ikut serta dalam kegiatan kerja bakti di SMPN 10 Cilegon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 13 -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card activity-card">
+                    <div class="card-img-container">
+                        <img src="https://source.unsplash.com/random/600x400/?sport" class="card-img-top" alt="Penutupan MPLS">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-category">Pendidikan</span>
+                        <p class="card-date">Jumat, 18 Juli 2025</p>
+                        <h5 class="card-title">Penutupan MPLS SMAN 4 Cilegon</h5>
+                        <p class="card-text">Ikut serta dalam senam, jalan santai, dan penutupan MPLS SMAN 4 Cilegon.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-    <!-- Card 3 -->
-    <div class="col-md-6 col-lg-4 mb-4">
-      <div class="news-card">
-        
-        <div class="p-4">
-          <span class="news-category">Pendidikan</span>
-          <h4 class="mb-1">Pelatihan Baca Tulis</h4>
-          <p class="news-date">30 Juli 2025</p>
-          <p>Pembinaan anak-anak yang belum lancar membaca dan menulis melalui pendekatan edukatif dan menyenangkan.</p>
-          <a href="#" class="btn btn-sm btn-outline-primary">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tambahan Proker lainnya bisa disalin dari pola di atas -->
-  </div>
-
-  <!-- Pagination -->
-  <nav aria-label="Page navigation" class="mt-5">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
-</div>
-
 
     <!-- Footer (Sama seperti website utama) -->
     <footer class="bg-dark text-white py-4 mt-5">
