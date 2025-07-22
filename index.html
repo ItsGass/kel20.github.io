@@ -82,6 +82,13 @@ img {
         padding: 8px 15px !important;
       }
 
+      .navbar-logo {
+  max-height: 50px !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+
       .dropdown-menu {
         border: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -263,64 +270,72 @@ img {
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <!-- Logo dan Brand dengan alignment presisi -->
+        <div class="d-flex align-items-center logo-brand-container">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+            <a class="navbar-brand ms-2" href="#">
+                <span class="kkm-text">KKM</span>
+                <span class="kkm-number">20</span>
+            </a>
         </div>
-    </nav>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                        Luaran
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="berita.html">Berita</a></li>
+                        <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                        <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                        Proker
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
+                        <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
+                        <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
+                        <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
+                        <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
+                        <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
+                        <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
+                        <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                        Dokumentasi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
 
@@ -405,7 +420,7 @@ img {
 
           <!-- Program 3 -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="250">
               <div class="d-flex align-items-center">
                 <div class="icon">
                   <img src="images/social-media.png" alt="Sosial Budaya" />
@@ -419,7 +434,7 @@ img {
 
           <!-- Program 4 -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">
+            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="250">
               <div class="d-flex align-items-center">
                 <div class="icon">
                   <img src="images/help.png" alt="Kesehatan" />
@@ -433,7 +448,7 @@ img {
 
           <!-- Program 5 -->
           <div class="col-md-6 col-lg-3 mb-4">
-            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="500">
+            <div class="benfit-card h-100 benfit-card d-flex raduis-10" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="250">
               <div class="d-flex align-items-center">
                 <div class="icon">
                   <img src="images/digital-disruption.png" alt="Teknologi" />
@@ -812,7 +827,7 @@ img {
 
     <script>
       const header = document.querySelector(".header");
-      const backgrounds = ["images/home.jpg", "images/home1.jpg", "images/home2.jpg", "images/home3.jpg"];
+      const backgrounds = ["images/home.jpg"];
       let currentIndex = 0;
 
       function changeBackground() {
