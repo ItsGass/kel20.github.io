@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artikel KKM - Kelompok 20</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
-        :root {
-            --primary-color: #131517;
-            --secondary-color: #050e13;
-            --light-color: #ecf0f1;
-            --dark-color: #131517;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px;
-        }
-        
-        .custom-navbar {
+      :root {
+        --primary-color: #131517;
+        --secondary-color: #050e13;
+        --light-color: #ecf0f1;
+        --dark-color: #131517;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        padding-top: 80px;
+      }
+
+      .custom-navbar {
         background-color: var(--primary-color) !important;
         padding: 15px 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -42,383 +42,638 @@
       }
 
       .navbar-logo {
-  max-height: 50px !important;
-  height: auto !important;
-  width: auto !important;
-}
-
+        max-height: 50px !important;
+        height: auto !important;
+        width: auto !important;
+      }
 
       .dropdown-menu {
         border: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-        /* Card Custom Style */
-        .activity-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: all 0.3s;
-            overflow: hidden;
-            height: 100%;
-            border: none;
-        }
-        
-        .activity-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
+      /* Card Custom Style */
+      .activity-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: all 0.3s;
+        overflow: hidden;
+        height: 100%;
+        border: none;
+      }
+
+      .activity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-container {
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .activity-card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-date {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .card-category {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .card-text {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+
+      .page-title {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
         .card-img-container {
-            height: 180px;
-            overflow: hidden;
-            position: relative;
+          height: 160px;
         }
-        
-        .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .activity-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-        }
-        
-        .card-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .card-category {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        .card-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .card-text {
-            color: #555;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .page-title {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .card-img-container {
-                height: 160px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">KKM 20</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown"> Luaran </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="berita.html">Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown"> Proker </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown"> Dokumentasi </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Content Section -->
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1 class="page-title">Program Kerja Bidang Pendidikan</h1>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <h1 class="page-title">Program Kerja Bidang Pendidikan & Keterampilan</h1>
         </div>
-        
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="images/pen1.jpg" class="card-img-top" alt="Perizinan Sekolah">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Senin, 14 Juli 2025</p>
-                        <h5 class="card-title">Perizinan ke SDN Suralaya</h5>
-                        <p class="card-text">Melakukan perizinan ke SDN Suralaya untuk menjadi guru pendamping dalam kegiatan belajar mengajar.</p>
-                    </div>
-                </div>
+      </div>
+
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/perizinan-sekolah.jpg" class="card-img-top" alt="Perizinan Sekolah" />
             </div>
-            
-            <!-- Card 2 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?teacher" class="card-img-top" alt="Guru Pendamping">
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Senin, 14 Juli 2025</p>
+              <h5 class="card-title">Perizinan ke SDN Suralaya</h5>
+              <p class="card-text">Melakukan perizinan ke SDN Suralaya untuk kegiatan pembelajaran.</p>
+              <div class="accordion" id="accordion1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                      <strong>Tujuan:</strong>
+                      <ul>
+                        <li>Koordinasi dengan pihak sekolah</li>
+                        <li>Memperoleh izin pelaksanaan program</li>
+                        <li>Menjalin kerjasama pendidikan</li>
+                      </ul>
                     </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Senin, 14 Juli 2025</p>
-                        <h5 class="card-title">Perizinan ke SDN Pringori</h5>
-                        <p class="card-text">Melakukan perizinan untuk menjadi Guru Pendamping di SDN Pringori membantu Kegiatan Belajar Mengajar.</p>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            
-            <!-- Card 3 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?english" class="card-img-top" alt="Bimbel Bahasa Inggris">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Senin, 14 Juli 2025</p>
-                        <h5 class="card-title">Bimbel Bahasa Inggris</h5>
-                        <p class="card-text">Bimbingan Belajar dengan materi "Alfabet and Vocabulary" untuk anak-anak di lingkungan sekitar.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?school" class="card-img-top" alt="Perizinan SMP">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Selasa, 15 Juli 2025</p>
-                        <h5 class="card-title">Perizinan ke SMPN 10 Cilegon</h5>
-                        <p class="card-text">Melakukan perizinan untuk membantu sebagai guru pendamping di SMPN 10 Cilegon.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 5 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?workshop" class="card-img-top" alt="MPLS">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Rabu, 16 Juli 2025</p>
-                        <h5 class="card-title">Mengisi Materi MPLS</h5>
-                        <p class="card-text">Mengisi materi tentang "7 Kebiasaan Indonesia Hebat" dalam kegiatan MPLS.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 6 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?arabic" class="card-img-top" alt="Bimbel Bahasa Arab">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Rabu, 16 Juli 2025</p>
-                        <h5 class="card-title">Bimbel Bahasa Arab</h5>
-                        <p class="card-text">Bimbingan Belajar Bahasa Arab dengan materi "Anggota Keluarga".</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 7 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?assessment" class="card-img-top" alt="Asesmen Diagnostik">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Kamis, 17 Juli 2025</p>
-                        <h5 class="card-title">Asesmen Diagnostik</h5>
-                        <p class="card-text">Membantu asesmen diagnostik kelas 3 di SDN Pringori untuk mengetahui gaya belajar siswa.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 8 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?ceremony" class="card-img-top" alt="Penutupan MPLS">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Kamis, 17 Juli 2025</p>
-                        <h5 class="card-title">Penutupan MPLS SMPN 10 Cilegon</h5>
-                        <p class="card-text">Ikut serta dalam acara Penutupan MPLS di SMPN 10 Cilegon.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 9 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?drugs" class="card-img-top" alt="Penyuluhan Narkotika">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <span class="card-category">Kesehatan</span>
-                        <p class="card-date">Kamis, 17 Juli 2025</p>
-                        <h5 class="card-title">Penyuluhan Narkotika</h5>
-                        <p class="card-text">Meliput Kegiatan MPLS SMAN 4 Cilegon dengan materi Penyuluhan Narkotika oleh BNN Kota Cilegon.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 10 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?english-class" class="card-img-top" alt="Bimbel Bahasa Inggris">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Kamis, 17 Juli 2025</p>
-                        <h5 class="card-title">Bimbel Bahasa Inggris</h5>
-                        <p class="card-text">Bimbingan Belajar Bahasa Inggris dengan Materi "Parts Of Body".</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 11 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?teaching" class="card-img-top" alt="Guru Pendamping">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Jumat, 18 Juli 2025</p>
-                        <h5 class="card-title">Guru Pendamping Kelas 1</h5>
-                        <p class="card-text">Mendampingi Guru untuk mengajar siswa kelas 1 di SDN Pringori.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 12 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?cleaning" class="card-img-top" alt="Kerja Bakti">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <span class="card-category">Sosial</span>
-                        <p class="card-date">Jumat, 18 Juli 2025</p>
-                        <h5 class="card-title">Kerja Bakti</h5>
-                        <p class="card-text">Ikut serta dalam kegiatan kerja bakti di SMPN 10 Cilegon.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Card 13 -->
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card activity-card">
-                    <div class="card-img-container">
-                        <img src="https://source.unsplash.com/random/600x400/?sport" class="card-img-top" alt="Penutupan MPLS">
-                    </div>
-                    <div class="card-body">
-                        <span class="card-category">Pendidikan</span>
-                        <p class="card-date">Jumat, 18 Juli 2025</p>
-                        <h5 class="card-title">Penutupan MPLS SMAN 4 Cilegon</h5>
-                        <p class="card-text">Ikut serta dalam senam, jalan santai, dan penutupan MPLS SMAN 4 Cilegon.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/guru-pendamping.jpg" class="card-img-top" alt="Guru Pendamping" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Senin, 14 Juli 2025</p>
+              <h5 class="card-title">Guru Pendamping SDN Pringori</h5>
+              <p class="card-text">Perizinan menjadi guru pendamping untuk membantu KBM di SDN Pringori.</p>
+              <div class="accordion" id="accordion2">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">Peran Guru Pendamping</button>
+                  </h2>
+                  <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Membantu proses belajar mengajar</li>
+                        <li>Mendampingi siswa berkebutuhan khusus</li>
+                        <li>Membuat media pembelajaran</li>
+                        <li>Membantu administrasi kelas</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/bimbel-inggris.jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Senin, 14 Juli 2025</p>
+              <h5 class="card-title">Bimbel Bahasa Inggris</h5>
+              <p class="card-text">Bimbingan belajar dengan materi "Alfabet and Vocabulary".</p>
+              <div class="accordion" id="accordion3">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">Materi Pembelajaran</button>
+                  </h2>
+                  <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                      <strong>Konten:</strong>
+                      <ul>
+                        <li>Pengenalan alfabet A-Z</li>
+                        <li>Kosakata dasar bahasa Inggris</li>
+                        <li>Pelajaran interaktif melalui games</li>
+                        <li>Latihan pengucapan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/perizinan-sekolah.jpg" class="card-img-top" alt="Perizinan SMP" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Selasa, 15 Juli 2025</p>
+              <h5 class="card-title">Perizinan ke SMPN 10</h5>
+              <p class="card-text">Melakukan perizinan untuk menjadi guru pendamping di SMPN 10 Cilegon.</p>
+              <div class="accordion" id="accordion4">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">Tujuan Kegiatan</button>
+                  </h2>
+                  <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Mendukung proses pembelajaran</li>
+                        <li>Memberikan pendampingan belajar</li>
+                        <li>Membantu guru kelas</li>
+                        <li>Mengobservasi kebutuhan siswa</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/mpls.jpg" class="card-img-top" alt="MPLS" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+
+              <p class="card-date">Rabu, 16 Juli 2025</p>
+              <h5 class="card-title">7 Kebiasaan Indonesia Hebat</h5>
+              <p class="card-text">Mengisi materi MPLS tentang pembentukan karakter bangsa.</p>
+              <div class="accordion" id="accordion5">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">Kebiasaan Positif</button>
+                  </h2>
+                  <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                      <strong>7 Kebiasaan:</strong>
+                      <ol>
+                        <li>Disiplin waktu</li>
+                        <li>Gemar membaca</li>
+                        <li>Menghargai perbedaan</li>
+                        <li>Hidup bersih dan sehat</li>
+                        <li>Peduli lingkungan</li>
+                        <li>Kreatif dan inovatif</li>
+                        <li>Bertanggung jawab</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/bimbel-arab.jpg" class="card-img-top" alt="Bimbel Bahasa Arab" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Rabu, 16 Juli 2025</p>
+              <h5 class="card-title">Bimbel Bahasa Arab</h5>
+              <p class="card-text">Bimbingan belajar dengan materi "Anggota Keluarga".</p>
+              <div class="accordion" id="accordion6">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">Kosakata Dasar</button>
+                  </h2>
+                  <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+                    <div class="accordion-body">
+                      <strong>Materi:</strong>
+                      <ul>
+                        <li>Ayah (Abun)</li>
+                        <li>Ibu (Ummun)</li>
+                        <li>Kakak (Akhun)</li>
+                        <li>Adik (Ukhtun)</li>
+                        <li>Kakek (Jaddun)</li>
+                        <li>Nenek (Jaddatun)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/asesmen.jpg" class="card-img-top" alt="Asesmen Diagnostik" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Asesmen Diagnostik Kelas 3</h5>
+              <p class="card-text">Membantu asesmen untuk mengetahui gaya belajar siswa di SDN Pringori.</p>
+              <div class="accordion" id="accordion7">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">Tujuan Asesmen</button>
+                  </h2>
+                  <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
+                    <div class="accordion-body">
+                      <strong>Aspek yang Dinilai:</strong>
+                      <ul>
+                        <li>Gaya belajar (visual, auditori, kinestetik)</li>
+                        <li>Tingkat pemahaman materi</li>
+                        <li>Masalah belajar yang dihadapi</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/mpls-penutupan.jpg" class="card-img-top" alt="Penutupan MPLS" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Penutupan MPLS SMPN 10</h5>
+              <p class="card-text">Ikut serta dalam acara penutupan MPLS di SMPN 10 Cilegon.</p>
+              <div class="accordion" id="accordion8">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">Kegiatan</button>
+                  </h2>
+                  <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Upacara penutupan</li>
+                        <li>Penampilan siswa</li>
+                        <li>Pembagian sertifikat</li>
+                        <li>Foto bersama</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/narkoba.jpg" class="card-img-top" alt="Penyuluhan Narkoba" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <span class="card-category">Kesehatan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Penyuluhan Narkoba SMAN 4</h5>
+              <p class="card-text">Meliput kegiatan MPLS dengan materi bahaya narkoba dari BNN.</p>
+              <div class="accordion" id="accordion9">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">Materi Penyuluhan</button>
+                  </h2>
+                  <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Jenis-jenis narkotika</li>
+                        <li>Dampak penyalahgunaan</li>
+                        <li>Bahaya kecanduan</li>
+                        <li>Strategi penolakan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 10 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/bimbel-inggris2.jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Bimbel Parts of Body</h5>
+              <p class="card-text">Bimbingan belajar bahasa Inggris dengan materi "Parts of Body".</p>
+              <div class="accordion" id="accordion10">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">Materi Pembelajaran</button>
+                  </h2>
+                  <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Nama-nama bagian tubuh</li>
+                        <li>Fungsi organ tubuh</li>
+                        <li>Praktik pengucapan</li>
+                        <li>Permainan edukatif</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 11 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/pendampingan-kelas.jpg" class="card-img-top" alt="Pendampingan Kelas" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Jumat, 18 Juli 2025</p>
+              <h5 class="card-title">Pendampingan Kelas 1</h5>
+              <p class="card-text">Mendampingi guru mengajar siswa kelas 1 di SDN Pringori.</p>
+              <div class="accordion" id="accordion11">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">Aktivitas Kelas</button>
+                  </h2>
+                  <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#accordion11">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Membaca bersama</li>
+                        <li>Menulis dasar</li>
+                        <li>Berhitung sederhana</li>
+                        <li>Pembelajaran interaktif</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 12 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kerja-bakti.jpg" class="card-img-top" alt="Kerja Bakti" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <span class="card-category">Sosial, Budaya & Pemberdayaan Masyarakat</span>
+              <p class="card-date">Jumat, 18 Juli 2025</p>
+              <h5 class="card-title">Kerja Bakti SMPN 10</h5>
+              <p class="card-text">Ikut serta dalam kegiatan kerja bakti di SMPN 10 Cilegon.</p>
+              <div class="accordion" id="accordion12">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12">Aktivitas</button>
+                  </h2>
+                  <div id="collapse12" class="accordion-collapse collapse" data-bs-parent="#accordion12">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Membersihkan ruang kelas</li>
+                        <li>Merapikan taman sekolah</li>
+                        <li>Memilah sampah</li>
+                        <li>Menata perpustakaan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 13 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/mpls-penutupan2.jpg" class="card-img-top" alt="Penutupan MPLS" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Jumat, 18 Juli 2025</p>
+              <h5 class="card-title">Penutupan MPLS SMAN 4</h5>
+              <p class="card-text">Ikut serta dalam senam, jalan santai dan penutupan MPLS SMAN 4.</p>
+              <div class="accordion" id="accordion13">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13">Kegiatan</button>
+                  </h2>
+                  <div id="collapse13" class="accordion-collapse collapse" data-bs-parent="#accordion13">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Senam bersama</li>
+                        <li>Jalan santai</li>
+                        <li>Upacara penutupan</li>
+                        <li>Penyerahan hadiah</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 14 -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/pendampingan.jpg" class="card-img-top" alt="Pendampingan Kelas" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Pendidikan & Keterampilan</span>
+
+              <p class="card-date">Sabtu, 19 Juli 2025</p>
+              <h5 class="card-title">Pendampingan Kelas 1 SDN Pringori</h5>
+              <p class="card-text">Mendampingi guru mengajar dengan metode interaktif.</p>
+              <div class="accordion" id="accordion14">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14">Kegiatan Kelas</button>
+                  </h2>
+                  <div id="collapse14" class="accordion-collapse collapse" data-bs-parent="#accordion14">
+                    <div class="accordion-body">
+                      <ul>
+                        <li>Ice breaking dan games</li>
+                        <li>Pembelajaran melalui YouTube</li>
+                        <li>Pengecekan kebersihan</li>
+                        <li>Pendampingan individu</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Footer (Sama seperti website utama) -->
     <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>KKM Kelompok 20</h5>
-                    <p>Universitas Bina Bangsa - Program KKM 2025</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>KKM Kelompok 20</h5>
+            <p>Universitas Bina Bangsa - Program KKM 2025</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
