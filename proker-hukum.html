@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artikel KKM - Kelompok 20</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
-        :root {
-            --primary-color: #131517;
-            --secondary-color: #050e13;
-            --light-color: #ecf0f1;
-            --dark-color: #131517;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px;
-        }
-        
-        .custom-navbar {
+      :root {
+        --primary-color: #131517;
+        --secondary-color: #050e13;
+        --light-color: #ecf0f1;
+        --dark-color: #131517;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        padding-top: 80px;
+      }
+
+      .custom-navbar {
         background-color: var(--primary-color) !important;
         padding: 15px 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -42,353 +42,339 @@
       }
 
       .navbar-logo {
-  max-height: 50px !important;
-  height: auto !important;
-  width: auto !important;
-}
-
+        max-height: 50px !important;
+        height: auto !important;
+        width: auto !important;
+      }
 
       .dropdown-menu {
         border: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-        /* Card Custom Style */
-        .activity-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: all 0.3s;
-            overflow: hidden;
-            height: 100%;
-            border: none;
-        }
-        
-        .activity-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
+      /* Card Custom Style */
+      .activity-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: all 0.3s;
+        overflow: hidden;
+        height: 100%;
+        border: none;
+      }
+
+      .activity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-container {
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .activity-card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-date {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .card-category {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .card-text {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+
+      .page-title {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
         .card-img-container {
-            height: 180px;
-            overflow: hidden;
-            position: relative;
+          height: 160px;
         }
-        
-        .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .activity-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-        }
-        
-        .card-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .card-category {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        .card-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .card-text {
-            color: #555;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .page-title {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .card-img-container {
-                height: 160px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="#">KKM 20</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown"> Luaran </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="berita.html">Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown"> Proker </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown"> Dokumentasi </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Galeri</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <!-- Content Section -->
-<div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-            <h1 class="page-title">Program Kerja Bidang Hukum</h1>
+          <h1 class="page-title">Program Kerja Bidang Hukum & Penyuluhan</h1>
         </div>
-    </div>
-    
-    <div class="row">
+      </div>
+
+      <div class="row">
         <!-- Card 1 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/ekskul-smp.jpg" class="card-img-top" alt="Pengenalan Ekstrakurikuler">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Hukum</span>
-                    <span class="card-category">Pendidikan</span>
-                    <p class="card-date">Kamis, 17 Juli 2025</p>
-                    <h5 class="card-title">Pengenalan Ekstrakurikuler SMPN 10</h5>
-                    <p class="card-text">Membantu pengenalan kegiatan ekstrakurikuler kepada siswa baru SMPN 10 Kota Cilegon.</p>
-                    <div class="accordion" id="accordion1">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                    Detail Kegiatan
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-                                <div class="accordion-body">
-                                    <strong>Kegiatan:</strong>
-                                    <ul>
-                                        <li>Presentasi berbagai ekskul yang tersedia</li>
-                                        <li>Pertunjukan dari masing-masing ekskul</li>
-                                        <li>Bincang santai dengan anggota ekskul</li>
-                                        <li>Pendaftaran minat siswa</li>
-                                    </ul>
-                                    <strong>Ekskul yang Diperkenalkan:</strong>
-                                    <ol>
-                                        <li>Pramuka</li>
-                                        <li>PMR</li>
-                                        <li>Paskibra</li>
-                                        <li>Paduan Suara</li>
-                                        <li>Tari Tradisional</li>
-                                        <li>Futsal</li>
-                                        <li>Klub Sains dan Teknologi</li>
-                                    </ol>
-                                    <strong>Kelebihan:</strong>
-                                    <ul>
-                                        <li>Memberikan wawasan awal tentang pilihan ekskul</li>
-                                        <li>Membantu siswa menemukan minat dan bakat</li>
-                                    </ul>
-                                    <strong>Kekurangan:</strong>
-                                    <ul>
-                                        <li>Waktu terbatas (1 jam) untuk penyampaian mendalam</li>
-                                        <li>Potensi kurangnya minat jika penyampaian kurang menarik</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/ekskul-smp.jpg" class="card-img-top" alt="Pengenalan Ekstrakurikuler" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Hukum & Penyuluhan</span>
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Pengenalan Ekstrakurikuler SMPN 10</h5>
+              <p class="card-text">Membantu pengenalan kegiatan ekstrakurikuler kepada siswa baru SMPN 10 Kota Cilegon.</p>
+              <div class="accordion" id="accordion1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                      <strong>Kegiatan:</strong>
+                      <ul>
+                        <li>Presentasi berbagai ekskul yang tersedia</li>
+                        <li>Pertunjukan dari masing-masing ekskul</li>
+                        <li>Bincang santai dengan anggota ekskul</li>
+                        <li>Pendaftaran minat siswa</li>
+                      </ul>
+                      <strong>Ekskul yang Diperkenalkan:</strong>
+                      <ol>
+                        <li>Pramuka</li>
+                        <li>PMR</li>
+                        <li>Paskibra</li>
+                        <li>Paduan Suara</li>
+                        <li>Tari Tradisional</li>
+                        <li>Futsal</li>
+                        <li>Klub Sains dan Teknologi</li>
+                      </ol>
+                      <strong>Kelebihan:</strong>
+                      <ul>
+                        <li>Memberikan wawasan awal tentang pilihan ekskul</li>
+                        <li>Membantu siswa menemukan minat dan bakat</li>
+                      </ul>
+                      <strong>Kekurangan:</strong>
+                      <ul>
+                        <li>Waktu terbatas (1 jam) untuk penyampaian mendalam</li>
+                        <li>Potensi kurangnya minat jika penyampaian kurang menarik</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 2 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/penyuluhan-narkoba.jpg" class="card-img-top" alt="Penyuluhan Narkoba">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Hukum</span>
-                    <span class="card-category">Kesehatan</span>
-                    <p class="card-date">Kamis, 17 Juli 2025</p>
-                    <h5 class="card-title">Penyuluhan Kenakalan Remaja & Narkoba</h5>
-                    <p class="card-text">Memberikan pemahaman tentang bahaya kenakalan remaja dan penyalahgunaan narkoba.</p>
-                    <div class="accordion" id="accordion2">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                    Materi Penyuluhan
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
-                                <div class="accordion-body">
-                                    <strong>Materi Utama:</strong>
-                                    <ol>
-                                        <li>Bahaya kenakalan remaja dalam kehidupan sehari-hari</li>
-                                        <li>Pengenalan obat-obatan mengandung narkoba</li>
-                                        <li>Jenis-jenis narkotika dan efeknya</li>
-                                        <li>Dampak hukum penyalahgunaan narkoba</li>
-                                        <li>Strategi penolakan terhadap narkoba</li>
-                                    </ol>
-                                    <strong>Metode Penyampaian:</strong>
-                                    <ul>
-                                        <li>Presentasi interaktif</li>
-                                        <li>Pemutaran video edukasi</li>
-                                        <li>Diskusi kelompok</li>
-                                        <li>Studi kasus nyata</li>
-                                        <li>Simulasi penolakan narkoba</li>
-                                    </ul>
-                                    <strong>Kelebihan:</strong>
-                                    <ul>
-                                        <li>Memberikan pemahaman bahaya narkoba sejak dini</li>
-                                        <li>Meningkatkan kesadaran lingkungan pergaulan sehat</li>
-                                    </ul>
-                                    <strong>Kekurangan:</strong>
-                                    <ul>
-                                        <li>Topik berat bisa membuat siswa tidak nyaman</li>
-                                        <li>Penyampaian teoretis berpotensi membosankan</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/penyuluhan-narkoba.jpg" class="card-img-top" alt="Penyuluhan Narkoba" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Hukum & Penyuluhan</span>
+              <span class="card-category">Kesehatan</span>
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Penyuluhan Kenakalan Remaja & Narkoba</h5>
+              <p class="card-text">Memberikan pemahaman tentang bahaya kenakalan remaja dan penyalahgunaan narkoba.</p>
+              <div class="accordion" id="accordion2">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">Materi Penyuluhan</button>
+                  </h2>
+                  <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                      <strong>Materi Utama:</strong>
+                      <ol>
+                        <li>Bahaya kenakalan remaja dalam kehidupan sehari-hari</li>
+                        <li>Pengenalan obat-obatan mengandung narkoba</li>
+                        <li>Jenis-jenis narkotika dan efeknya</li>
+                        <li>Dampak hukum penyalahgunaan narkoba</li>
+                        <li>Strategi penolakan terhadap narkoba</li>
+                      </ol>
+                      <strong>Metode Penyampaian:</strong>
+                      <ul>
+                        <li>Presentasi interaktif</li>
+                        <li>Pemutaran video edukasi</li>
+                        <li>Diskusi kelompok</li>
+                        <li>Studi kasus nyata</li>
+                        <li>Simulasi penolakan narkoba</li>
+                      </ul>
+                      <strong>Kelebihan:</strong>
+                      <ul>
+                        <li>Memberikan pemahaman bahaya narkoba sejak dini</li>
+                        <li>Meningkatkan kesadaran lingkungan pergaulan sehat</li>
+                      </ul>
+                      <strong>Kekurangan:</strong>
+                      <ul>
+                        <li>Topik berat bisa membuat siswa tidak nyaman</li>
+                        <li>Penyampaian teoretis berpotensi membosankan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 3 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/pancasila-sd.jpg" class="card-img-top" alt="Pancasila SD">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Hukum</span>
-                    <span class="card-category">Pendidikan</span>
-                    <p class="card-date">Jumat, 18 Juli 2025</p>
-                    <h5 class="card-title">Mengajar Pancasila di SD</h5>
-                    <p class="card-text">Menanamkan nilai Pancasila dan tata krama dalam kehidupan sehari-hari kepada siswa SD.</p>
-                    <div class="accordion" id="accordion3">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                    Konten Pembelajaran
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
-                                <div class="accordion-body">
-                                    <strong>Nilai yang Diajarkan:</strong>
-                                    <ul>
-                                        <li>Sila 1: Berdoa, toleransi beragama</li>
-                                        <li>Sila 2: Saling menghargai, gotong royong</li>
-                                        <li>Sila 3: Cinta tanah air, persatuan</li>
-                                        <li>Sila 4: Musyawarah, demokrasi</li>
-                                        <li>Sila 5: Keadilan sosial</li>
-                                    </ul>
-                                    <strong>Praktik Tata Krama:</strong>
-                                    <ol>
-                                        <li>5S (Senyum, Salam, Sapa, Sopan, Santun)</li>
-                                        <li>Berbicara dengan sopan</li>
-                                        <li>Menghargai orang lain</li>
-                                        <li>Kejujuran dan menepati janji</li>
-                                        <li>Partisipasi dalam kegiatan masyarakat</li>
-                                    </ol>
-                                    <strong>Kelebihan:</strong>
-                                    <ul>
-                                        <li>Menanamkan nilai moral dan kebangsaan sejak dini</li>
-                                        <li>Pembelajaran kontekstual melalui kegiatan nyata</li>
-                                    </ul>
-                                    <strong>Kekurangan:</strong>
-                                    <ul>
-                                        <li>Rentang perhatian anak SD yang terbatas</li>
-                                        <li>Kebutuhan pendekatan kreatif agar tidak membosankan</li>
-                                        <li>Nilai abstrak sulit dipahami tanpa contoh konkret</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/pancasila-sd.jpg" class="card-img-top" alt="Pancasila SD" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Hukum & Penyuluhan</span>
+              <span class="card-category">Pendidikan & Keterampilan</span>
+              <p class="card-date">Jumat, 18 Juli 2025</p>
+              <h5 class="card-title">Mengajar Pancasila di SD</h5>
+              <p class="card-text">Menanamkan nilai Pancasila dan tata krama dalam kehidupan sehari-hari kepada siswa SD.</p>
+              <div class="accordion" id="accordion3">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">Konten Pembelajaran</button>
+                  </h2>
+                  <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                      <strong>Nilai yang Diajarkan:</strong>
+                      <ul>
+                        <li>Sila 1: Berdoa, toleransi beragama</li>
+                        <li>Sila 2: Saling menghargai, gotong royong</li>
+                        <li>Sila 3: Cinta tanah air, persatuan</li>
+                        <li>Sila 4: Musyawarah, demokrasi</li>
+                        <li>Sila 5: Keadilan sosial</li>
+                      </ul>
+                      <strong>Praktik Tata Krama:</strong>
+                      <ol>
+                        <li>5S (Senyum, Salam, Sapa, Sopan, Santun)</li>
+                        <li>Berbicara dengan sopan</li>
+                        <li>Menghargai orang lain</li>
+                        <li>Kejujuran dan menepati janji</li>
+                        <li>Partisipasi dalam kegiatan masyarakat</li>
+                      </ol>
+                      <strong>Kelebihan:</strong>
+                      <ul>
+                        <li>Menanamkan nilai moral dan kebangsaan sejak dini</li>
+                        <li>Pembelajaran kontekstual melalui kegiatan nyata</li>
+                      </ul>
+                      <strong>Kekurangan:</strong>
+                      <ul>
+                        <li>Rentang perhatian anak SD yang terbatas</li>
+                        <li>Kebutuhan pendekatan kreatif agar tidak membosankan</li>
+                        <li>Nilai abstrak sulit dipahami tanpa contoh konkret</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
     <!-- Footer (Sama seperti website utama) -->
     <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>KKM Kelompok 20</h5>
-                    <p>Universitas Bina Bangsa - Program KKM 2025</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>KKM Kelompok 20</h5>
+            <p>Universitas Bina Bangsa - Program KKM 2025</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+          </div>
         </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
