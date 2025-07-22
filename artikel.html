@@ -40,7 +40,11 @@
             font-weight: 500;
             padding: 8px 15px !important;
         }
-        
+        .navbar-logo {
+  max-height: 50px !important;
+  height: auto !important;
+  width: auto !important;
+}
         .dropdown-menu {
             border: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -91,66 +95,72 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <!-- Logo dan Brand dengan alignment presisi -->
+        <div class="d-flex align-items-center logo-brand-container">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+            <a class="navbar-brand ms-2" href="#">
+                <span class="kkm-text">KKM</span>
+                <span class="kkm-number">20</span>
+            </a>
         </div>
-    </nav>
 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                        Luaran
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="berita.html">Berita</a></li>
+                        <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
+                        <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                        Proker
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
+                        <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
+                        <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
+                        <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
+                        <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
+                        <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
+                        <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
+                        <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                        Dokumentasi
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
+                        <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galeri</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kontak</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
     <!-- Daftar Berita -->
     <div class="container">
         <div class="row">
@@ -168,7 +178,7 @@
                         <span class="news-category">Sosial, Budaya & Pemberdayaan Masyarakat</span>
                         <span class="news-category">Teknologi Tepat Guna & Informasi</span>
                         <h4>Mahasiswa KKM Mengikuti Kegiatan Pencak Silat Dan Musik Tradisional Di Desa Kembang Kuning</h4>
-                        <p class="news-date">14 Juli 2023</p>
+                        <p class="news-date">12 Juli 2025</p>
                         <p>Mahasiswa peserta Kuliah Kerja Mahasiswa (KKM) dari Universitas Bina Bangsa turut serta dalam kegiatan budaya di Desa Kembang Kuning, Kelurahan Suralaya, Kecamatan Pulomerak, Kota Cilegon. Kegiatan ini bertujuan untuk melestarikan seni tradisional sekaligus mempererat hubungan antara mahasiswa dan masyarakat setempat....</p>
                         <a href="https://www.kompasiana.com/dityobagaswicaksono0340/6874745f34777c71cb54ca42/mahasiswa-kkm-mengikuti-kegiatan-pencak-silat-dan-musik-tradisional-di-desa-kembang-kuning" class="btn btn-sm btn-outline-primary">Baca Selengkapnya</a>
                     </div>
