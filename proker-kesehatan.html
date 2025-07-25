@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artikel KKM - Kelompok 20</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <style>
-        :root {
-            --primary-color: #131517;
-            --secondary-color: #050e13;
-            --light-color: #ecf0f1;
-            --dark-color: #131517;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            padding-top: 80px;
-        }
-        
-        .custom-navbar {
+      :root {
+        --primary-color: #090d11;
+        --secondary-color: #0d41c2;
+        --accent-color: #ff1900;
+        --light-color: #ecf0f1;
+        --dark-color: #131517;
+        --text-color: #34495e;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        padding-top: 80px;
+      }
+
+      .custom-navbar {
         background-color: var(--primary-color) !important;
         padding: 15px 0;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -42,400 +44,484 @@
       }
 
       .navbar-logo {
-  max-height: 50px !important;
-  height: auto !important;
-  width: auto !important;
-}
-
+        max-height: 50px !important;
+        height: auto !important;
+        width: auto !important;
+      }
 
       .dropdown-menu {
         border: none;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
-        /* Card Custom Style */
-        .activity-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: all 0.3s;
-            overflow: hidden;
-            height: 100%;
-            border: none;
-        }
-        
-        .activity-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
+      /* Card Custom Style */
+      .activity-card {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        transition: all 0.3s;
+        overflow: hidden;
+        height: 100%;
+        border: none;
+      }
+
+      .activity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-container {
+        height: 180px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .activity-card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-date {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+      }
+
+      .card-category {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 12px;
+        font-size: 1.1rem;
+      }
+
+      .card-text {
+        color: #555;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+      }
+
+      .page-title {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
         .card-img-container {
-            height: 180px;
-            overflow: hidden;
-            position: relative;
+          height: 160px;
         }
-        
-        .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .activity-card:hover .card-img-top {
-            transform: scale(1.05);
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-        }
-        
-        .card-date {
-            color: #6c757d;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-        
-        .card-category {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        
-        .card-title {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .card-text {
-            color: #555;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .page-title {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .card-img-container {
-                height: 160px;
-            }
-        }
+      }
+      /* Footer */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      footer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      footer p {
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      footer a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      footer a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">KKM 20</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                            Luaran
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                            <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                            <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                            Proker
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                            <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                            <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                            <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                            <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                            <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                            <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                            <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                            Dokumentasi
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Galeri</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Kontak</a>
-                    </li>
-                </ul>
-                
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#090d11">
+    <div class="container">
+        <!-- Logo dan Brand dengan alignment presisi -->
+        <div class="d-flex align-items-center logo-brand-container">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+            <a class="navbar-brand ms-2" href="#">
+                <span class="kkm-text">KKM</span>
+                <span class="kkm-number">20</span>
+            </a>
         </div>
-    </nav>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="fas fa-users me-1"></i>Profile</a></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-newspaper me-1"></i> Luaran
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="berita.html"><i class="fas fa-bullhorn me-2"></i>Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html"><i class="fas fa-file-alt me-2"></i>Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html"><i class="fas fa-book me-2"></i>Jurnal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-tasks me-1"></i>Proker
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="proker-pendidikan.html"><i class="fas fa-graduation-cap me-2"></i>Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html"><i class="fas fa-chart-line me-2"></i>Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html"><i class="fas fa-mosque me-2"></i>Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html"><i class="fas fa-hands-helping me-2"></i>Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html"><i class="fas fa-landmark me-2"></i>Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html"><i class="fas fa-laptop-code me-2"></i>Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html"><i class="fas fa-gavel me-2"></i>Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html"><i class="fas fa-heartbeat me-2"></i>Kesehatan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-camera me-1"></i>Dokumentasi
+                    </a>
+                    <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="dokumentasi-week1.html"><i class="fas fa-calendar-week me-2"></i>Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html"><i class="fas fa-calendar-week me-2"></i>Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html"><i class="fas fa-calendar-week me-2"></i>Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html"><i class="fas fa-calendar-week me-2"></i>Week 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i>Kontak</a></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
     <!-- Content Section -->
-<div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
         <div class="col-12">
-            <h1 class="page-title">Program Kerja Bidang Kesehatan</h1>
+          <h1 class="page-title">Program Kerja Bidang Kesehatan</h1>
         </div>
-    </div>
-    
-    <div class="row">
+      </div>
+
+      <div class="row">
         <!-- Card 1 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/poliklinik.jpg" class="card-img-top" alt="Poliklinik Desa">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Kesehatan</span>
-                    <p class="card-date">Jumat, 11 Juli 2025</p>
-                    <h5 class="card-title">Kunjungan ke Poliklinik Desa</h5>
-                    <p class="card-text">Mengunjungi poliklinik desa untuk mengetahui kasus penyakit yang paling banyak terjadi di Desa Suralaya.</p>
-                    <div class="accordion" id="accordion1">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                                    Detail Kegiatan
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-                                <div class="accordion-body">
-                                    <strong>Hasil Kunjungan:</strong>
-                                    <ul>
-                                        <li>Identifikasi penyakit paling umum di masyarakat</li>
-                                        <li>Pemahaman fasilitas kesehatan yang tersedia</li>
-                                        <li>Data statistik kunjungan pasien</li>
-                                        <li>Kebutuhan obat-obatan yang sering digunakan</li>
-                                    </ul>
-                                    <strong>Tindak Lanjut:</strong>
-                                    <ol>
-                                        <li>Penyusunan program penyuluhan kesehatan</li>
-                                        <li>Koordinasi dengan tenaga kesehatan</li>
-                                        <li>Pengadaan materi edukasi</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kesehatan1.jpg" class="card-img-top" alt="Poliklinik Desa" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Kesehatan</span>
+              <p class="card-date">Jumat, 11 Juli 2025</p>
+              <h5 class="card-title">Kunjungan ke Poliklinik Desa</h5>
+              <p class="card-text">Mengunjungi poliklinik desa untuk mengetahui kasus penyakit yang paling banyak terjadi di Desa Suralaya.</p>
+              <div class="accordion" id="accordion1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                    <div class="accordion-body">
+                      <strong>Hasil Kunjungan:</strong>
+                      <ul>
+                        <li>Identifikasi penyakit paling umum di masyarakat</li>
+                        <li>Pemahaman fasilitas kesehatan yang tersedia</li>
+                        <li>Data statistik kunjungan pasien</li>
+                        <li>Kebutuhan obat-obatan yang sering digunakan</li>
+                      </ul>
+                      <strong>Tindak Lanjut:</strong>
+                      <ol>
+                        <li>Penyusunan program penyuluhan kesehatan</li>
+                        <li>Koordinasi dengan tenaga kesehatan</li>
+                        <li>Pengadaan materi edukasi</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 2 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/bidan-desa.jpg" class="card-img-top" alt="Bidan Desa">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Kesehatan</span>
-                    <p class="card-date">Sabtu, 12 Juli 2025</p>
-                    <h5 class="card-title">Kunjungan ke Bidan Desa</h5>
-                    <p class="card-text">Wawancara dengan bidan desa tentang kasus kesehatan dan diskusi program kerja bidang kesehatan.</p>
-                    <div class="accordion" id="accordion2">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                                    Detail Kegiatan
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
-                                <div class="accordion-body">
-                                    <strong>Pembahasan:</strong>
-                                    <ul>
-                                        <li>Masalah kesehatan ibu dan anak</li>
-                                        <li>Program imunisasi dan posyandu</li>
-                                        <li>Kebutuhan kesehatan reproduksi</li>
-                                        <li>Penyakit menular yang sering terjadi</li>
-                                    </ul>
-                                    <strong>Rencana Kolaborasi:</strong>
-                                    <ol>
-                                        <li>Pendampingan posyandu</li>
-                                        <li>Penyuluhan kesehatan ibu dan anak</li>
-                                        <li>Pendataan balita dan ibu hamil</li>
-                                        <li>Edukasi gizi seimbang</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kesehatan2.jpg" class="card-img-top" alt="Bidan Desa" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Kesehatan</span>
+              <p class="card-date">Sabtu, 12 Juli 2025</p>
+              <h5 class="card-title">Kunjungan ke Bidan Desa</h5>
+              <p class="card-text">Wawancara dengan bidan desa tentang kasus kesehatan dan diskusi program kerja bidang kesehatan.</p>
+              <div class="accordion" id="accordion2">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                    <div class="accordion-body">
+                      <strong>Pembahasan:</strong>
+                      <ul>
+                        <li>Masalah kesehatan ibu dan anak</li>
+                        <li>Program imunisasi dan posyandu</li>
+                        <li>Kebutuhan kesehatan reproduksi</li>
+                        <li>Penyakit menular yang sering terjadi</li>
+                      </ul>
+                      <strong>Rencana Kolaborasi:</strong>
+                      <ol>
+                        <li>Pendampingan posyandu</li>
+                        <li>Penyuluhan kesehatan ibu dan anak</li>
+                        <li>Pendataan balita dan ibu hamil</li>
+                        <li>Edukasi gizi seimbang</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 3 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/posyandu.jpg" class="card-img-top" alt="Kegiatan Posyandu">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Kesehatan</span>
-                    <p class="card-date">Selasa, 15 Juli 2025</p>
-                    <h5 class="card-title">Bantu Kegiatan Posyandu</h5>
-                    <p class="card-text">Membantu pelaksanaan program posyandu di Desa Suralaya Pos 1 dan 2.</p>
-                    <div class="accordion" id="accordion3">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                                    Detail Kegiatan
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
-                                <div class="accordion-body">
-                                    <strong>Aktivitas:</strong>
-                                    <ol>
-                                        <li>Pendaftaran dan pencatatan peserta</li>
-                                        <li>Pengukuran berat dan tinggi badan</li>
-                                        <li>Pemantauan perkembangan anak</li>
-                                        <li>Pemberian vitamin dan imunisasi</li>
-                                        <li>Penyuluhan gizi</li>
-                                    </ol>
-                                    <strong>Peran Mahasiswa:</strong>
-                                    <ul>
-                                        <li>Membantu administrasi</li>
-                                        <li>Mendokumentasikan kegiatan</li>
-                                        <li>Memberikan edukasi kesehatan</li>
-                                        <li>Membantu distribusi makanan tambahan</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kesehatan3.jpg" class="card-img-top" alt="Kegiatan Posyandu" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Kesehatan</span>
+              <p class="card-date">Selasa, 15 Juli 2025</p>
+              <h5 class="card-title">Bantu Kegiatan Posyandu</h5>
+              <p class="card-text">Membantu pelaksanaan program posyandu di Desa Suralaya Pos 1 dan 2.</p>
+              <div class="accordion" id="accordion3">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                    <div class="accordion-body">
+                      <strong>Aktivitas:</strong>
+                      <ol>
+                        <li>Pendaftaran dan pencatatan peserta</li>
+                        <li>Pengukuran berat dan tinggi badan</li>
+                        <li>Pemantauan perkembangan anak</li>
+                        <li>Pemberian vitamin dan imunisasi</li>
+                        <li>Penyuluhan gizi</li>
+                      </ol>
+                      <strong>Peran Mahasiswa:</strong>
+                      <ul>
+                        <li>Membantu administrasi</li>
+                        <li>Mendokumentasikan kegiatan</li>
+                        <li>Memberikan edukasi kesehatan</li>
+                        <li>Membantu distribusi makanan tambahan</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 4 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/penyuluhan-narkoba.jpg" class="card-img-top" alt="Penyuluhan Narkoba">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Kesehatan</span>
-                    <span class="card-category">Hukum</span>
-                    <p class="card-date">Kamis, 17 Juli 2025</p>
-                    <h5 class="card-title">Penyuluhan Narkoba</h5>
-                    <p class="card-text">Kolaborasi dengan bidang hukum memberikan penyuluhan tentang bahaya narkoba bagi remaja.</p>
-                    <div class="accordion" id="accordion4">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
-                                    Materi Penyuluhan
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
-                                <div class="accordion-body">
-                                    <strong>Konten Edukasi:</strong>
-                                    <ul>
-                                        <li>Pengertian dan jenis-jenis narkoba</li>
-                                        <li>Bahaya penyalahgunaan narkotika</li>
-                                        <li>Efek samping fisik dan mental</li>
-                                        <li>Upaya pencegahan dini</li>
-                                        <li>Dampak sosial dan hukum</li>
-                                    </ul>
-                                    <strong>Metode:</strong>
-                                    <ol>
-                                        <li>Presentasi interaktif</li>
-                                        <li>Diskusi kelompok</li>
-                                        <li>Studi kasus</li>
-                                        <li>Simulasi penolakan</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kesehatan4.jpg" class="card-img-top" alt="Penyuluhan Narkoba" />
             </div>
+            <div class="card-body">
+              <span class="card-category">Kesehatan</span>
+              <span class="card-category">Hukum</span>
+              <span class="card-category">Pendidikan & Keterampilan</span>
+
+              <p class="card-date">Kamis, 17 Juli 2025</p>
+              <h5 class="card-title">Penyuluhan Narkoba</h5>
+              <p class="card-text">Kolaborasi dengan bidang hukum memberikan penyuluhan tentang bahaya narkoba bagi remaja.</p>
+              <div class="accordion" id="accordion4">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">Materi Penyuluhan</button>
+                  </h2>
+                  <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                    <div class="accordion-body">
+                      <strong>Konten Edukasi:</strong>
+                      <ul>
+                        <li>Pengertian dan jenis-jenis narkoba</li>
+                        <li>Bahaya penyalahgunaan narkotika</li>
+                        <li>Efek samping fisik dan mental</li>
+                        <li>Upaya pencegahan dini</li>
+                        <li>Dampak sosial dan hukum</li>
+                      </ul>
+                      <strong>Metode:</strong>
+                      <ol>
+                        <li>Presentasi interaktif</li>
+                        <li>Diskusi kelompok</li>
+                        <li>Studi kasus</li>
+                        <li>Simulasi penolakan</li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
         <!-- Card 5 -->
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card activity-card">
-                <div class="card-img-container">
-                    <img src="images/tanaman-herbal.jpg" class="card-img-top" alt="Tanaman Herbal">
-                </div>
-                <div class="card-body">
-                    <span class="card-category">Kesehatan</span>
-                    <span class="card-category">Lingkungan</span>
-                    <p class="card-date">Minggu, 20 Juli 2025</p>
-                    <h5 class="card-title">Penanaman TOGA</h5>
-                    <p class="card-text">Menanam tanaman herbal TOGA (Tanaman Obat Keluarga) berbagai jenis di lingkungan masyarakat.</p>
-                    <div class="accordion" id="accordion5">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
-                                    Detail Kegiatan
-                                </button>
-                            </h2>
-                            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
-                                <div class="accordion-body">
-                                    <strong>Jenis Tanaman:</strong>
-                                    <ul>
-                                        <li>Jahe, kunyit, temulawak</li>
-                                        <li>Lidah buaya, sirih, kemangi</li>
-                                        <li>Kencur, lengkuas, serai</li>
-                                        <li>Daun kelor, binahong</li>
-                                        <li>26 jenis tanaman obat lainnya</li>
-                                    </ul>
-                                    <strong>Manfaat:</strong>
-                                    <ol>
-                                        <li>Sumber obat alami keluarga</li>
-                                        <li>Peningkatan kualitas lingkungan</li>
-                                        <li>Edukasi pemanfaatan tanaman obat</li>
-                                        <li>Ketahanan kesehatan masyarakat</li>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
+          <div class="card activity-card">
+            <div class="card-img-container">
+              <img src="images/kesehatan5.jpg" class="card-img-top" alt="Tanaman Herbal" />
+            </div>
+            <div class="card-body">
+              <span class="card-category">Kesehatan</span>
+              <span class="card-category">Sosial, Budaya & Pemberdayaan Masyarakat</span>
+              <p class="card-date">Minggu, 20 Juli 2025</p>
+              <h5 class="card-title">Penanaman TOGA</h5>
+              <p class="card-text">Menanam tanaman herbal TOGA (Tanaman Obat Keluarga) berbagai jenis di lingkungan masyarakat.</p>
+              <div class="accordion" id="accordion5">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">Detail Kegiatan</button>
+                  </h2>
+                  <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                    <div class="accordion-body">
+                      <strong>Jenis Tanaman:</strong>
+                      <ul>
+                        <li>Jahe, kunyit, temulawak</li>
+                        <li>Lidah buaya, sirih, kemangi</li>
+                        <li>Kencur, lengkuas, serai</li>
+                        <li>Daun kelor, binahong</li>
+                        <li>26 jenis tanaman obat lainnya</li>
+                      </ul>
+                      <strong>Manfaat:</strong>
+                      <ol>
+                        <li>Sumber obat alami keluarga</li>
+                        <li>Peningkatan kualitas lingkungan</li>
+                        <li>Edukasi pemanfaatan tanaman obat</li>
+                        <li>Ketahanan kesehatan masyarakat</li>
+                      </ol>
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-    <!-- Footer (Sama seperti website utama) -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>KKM Kelompok 20</h5>
-                    <p>Universitas Bina Bangsa - Program KKM 2025</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
-                </div>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>KKM Kelompok 20</h5>
+            <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
+            <p>Universitas Bina Bangsa - Program KKM 2025</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kontak Kami</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Kelurahan Suralaya, Kota Cilegon</p>
+            <p><i class="fas fa-envelope me-2"></i> kkm20@binabangsa.ac.id</p>
+            <p><i class="fas fa-phone me-2"></i> +62 123 4567 890</p>
+          </div>
         </div>
+        <div class="copyright">
+          <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  </body>
 </html>
