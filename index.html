@@ -12,10 +12,12 @@
 
     <style>
       :root {
-        --primary-color: #131517;
-        --secondary-color: #050e13;
+        --primary-color: #090d11;
+        --secondary-color: #0d41c2;
+        --accent-color: #ff1900;
         --light-color: #ecf0f1;
         --dark-color: #131517;
+        --text-color: #34495e;
       }
 
       /* Fix horizontal overflow */
@@ -199,19 +201,76 @@ img {
         margin-bottom: 15px;
       }
 
+      /* Footer */
       footer {
-        background-color: var(--dark-color);
+        background-color: var(--primary-color);
         color: white;
-        padding: 50px 0 20px;
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      footer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      footer p {
+        opacity: 0.8;
+        margin-bottom: 1rem;
       }
 
       footer a {
-        color: var(--light-color);
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s;
       }
 
-      footer .logo {
-        max-width: 200px;
+      footer a:hover {
+        color: white;
+        text-decoration: underline;
       }
+
+      .social-icons {
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+
 
       @media (max-width: 992px) {
         .header {
@@ -270,7 +329,7 @@ img {
   </head>
   <body>
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#090d11">
     <div class="container">
         <!-- Logo dan Brand dengan alignment presisi -->
         <div class="d-flex align-items-center logo-brand-container">
@@ -288,49 +347,49 @@ img {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="fas fa-users me-1"></i>Profile</a></a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
-                        Luaran
+                        <i class="fas fa-newspaper me-1"></i> Luaran
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                        <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                        <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
+                        <li><a class="dropdown-item" href="berita.html"><i class="fas fa-bullhorn me-2"></i>Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html"><i class="fas fa-file-alt me-2"></i>Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html"><i class="fas fa-book me-2"></i>Jurnal</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
-                        Proker
+                        <i class="fas fa-tasks me-1"></i>Proker
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                        <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                        <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                        <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                        <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                        <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                        <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                        <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
+                        <li><a class="dropdown-item" href="proker-pendidikan.html"><i class="fas fa-graduation-cap me-2"></i>Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html"><i class="fas fa-chart-line me-2"></i>Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html"><i class="fas fa-mosque me-2"></i>Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html"><i class="fas fa-hands-helping me-2"></i>Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html"><i class="fas fa-landmark me-2"></i>Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html"><i class="fas fa-laptop-code me-2"></i>Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html"><i class="fas fa-gavel me-2"></i>Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html"><i class="fas fa-heartbeat me-2"></i>Kesehatan</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
-                        Dokumentasi
+                        <i class="fas fa-camera me-1"></i>Dokumentasi
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                        <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                        <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                        <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
+                       <li><a class="dropdown-item" href="dokumentasi-week1.html"><i class="fas fa-calendar-week me-2"></i>Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html"><i class="fas fa-calendar-week me-2"></i>Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html"><i class="fas fa-calendar-week me-2"></i>Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html"><i class="fas fa-calendar-week me-2"></i>Week 4</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galeri</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kontak</a>
+                    <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i>Kontak</a></a>
                 </li>
             </ul>
         </div>
@@ -345,7 +404,7 @@ img {
         <div class="intro">
           <div class="intro-text">
             <h1 class="mb-3" data-aos="fade-up">Kuliah Kerja Mahasiswa</h1>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="300">KKM Kelompok 20, Lingkungan Berigil & Kembang Kuning, Kelurahan Suralaya, Kecamatan Pulomerak, Kota Cilegon, Provinsi Banten</p>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="300">Website ini merupakan media dokumentasi dan publikasi kegiatan Kuliah Kerja Mahasiswa (KKM) Kelompok 20 Universitas Bina Bangsa yang dilaksanakan di Kelurahan Suralaya, Kecamatan Pulomerak, Kota Cilegon</p>
             <div class="btns" data-aos="fade-up" data-aos-delay="600">
             <a href="https://youtu.be/xvFZjo5PgG0" class="watch justify-content-center" style="text-decoration: none;">
             <i class="fas fa-play-circle"></i> Tonton Video</a>
@@ -363,8 +422,9 @@ img {
             <h3 class="section-title text-center text-lg-start">Tentang Kami</h3>
             <h2 class="mb-4">Kami dari Universitas Bina Bangsa</h2>
             <p class="mb-4">
-              Kami adalah mahasiswa Universitas Bina Bangsa yang sedang melaksanakan program Kuliah Kerja Mahasiswa (KKM) sebagai bagian dari pengabdian kepada masyarakat. Program ini berfokus pada delapan bidang utama, yaitu: hukum,
-              ekonomi, agama, sosial, pemerintahan, teknologi, kesehatan, dan pendidikan.
+              Kegiatan Kuliah Kerja Mahasiswa (KKM) merupakan bentuk pengabdian mahasiswa kepada masyarakat sebagai bagian dari pelaksanaan Tri Dharma Perguruan Tinggi. Melalui KKM ini, kami berkomitmen untuk mengaplikasikan ilmu pengetahuan yang telah diperoleh selama masa perkuliahan secara langsung di tengah masyarakat.
+
+Kegiatan ini dilaksanakan oleh mahasiswa Universitas Bina Bangsa dengan harapan dapat mendorong partisipasi aktif masyarakat dalam pembangunan, meningkatkan kesadaran sosial, serta menciptakan solusi atas permasalahan yang ada melalui pendekatan edukatif, partisipatif, dan humanis.
             </p>
             <div class="social-media mb-4">
               <h5 class="mb-3">Ikuti Kami:</h5>
@@ -505,262 +565,7 @@ img {
       </div>
     </section>
 
-    <!-- Team Structure Section -->
-    <section class="py-5">
-      <div class="container">
-        <h3 class="section-titlee text-center">Struktur Tim</h3>
-
-        <!-- Dosen Pembimbing -->
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-6 col-lg-4">
-            <div class="product-card text-center">
-              <h4 class="mb-4">Dosen Pembimbing Lapangan</h4>
-              <div class="product-image mb-3">
-                <img src="images/pak.png" alt="Dosen Pembimbing" class="img-fluid rounded-circle" />
-              </div>
-              <h5>Tabroni S.T, M.M</h5>
-              <p class="text-muted">Dosen Pembimbing Lapangan</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ketua -->
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-6 col-lg-4">
-            <div class="product-card text-center">
-              <h4 class="mb-4">Ketua Kelompok</h4>
-              <div class="product-image mb-3">
-                <img src="images/bagas.jpg" alt="Ketua" class="img-fluid rounded-circle" />
-              </div>
-              <h5>Dityo Bagas Wicaksono</h5>
-              <p class="text-muted">Sistem Informasi</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Anggota Inti -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">Anggota Inti</h4>
-          </div>
-
-          <!-- Wakil Ketua -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="team-member text-center">
-              <img src="images/ajay.jpg" alt="Wakil Ketua" class="img-fluid" />
-              <h5>Muhamad Fajar Ismail</h5>
-              <p class="text-muted">Wakil Ketua - Hukum</p>
-            </div>
-          </div>
-
-          <!-- Sekretaris 1 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="team-member text-center">
-              <img src="images/divi.png" alt="Sekretaris 1" class="img-fluid" />
-              <h5>Divia Yuni Purwanti</h5>
-              <p class="text-muted">Sekretaris 1 - Manajemen</p>
-            </div>
-          </div>
-
-          <!-- Sekretaris 2 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="team-member text-center">
-              <img src="images/NAZWA.jpg" alt="Sekretaris 2" class="img-fluid" />
-              <h5>Nazwa Baidillah</h5>
-              <p class="text-muted">Sekretaris 2 - Pendidikan Bahasa Inggris</p>
-            </div>
-          </div>
-
-          <!-- Bendahara 1 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="team-member text-center">
-              <img src="images/ACA.jpg" alt="Bendahara 1" class="img-fluid" />
-              <h5>Marsya Diva Ramadhania</h5>
-              <p class="text-muted">Bendahara 1 - Ilmu Komputer</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="team-member text-center">
-              <img src="images/INDAH.jpg" alt="Bendahara 2" class="img-fluid" />
-              <h5>Indah Syafitri</h5>
-              <p class="text-muted">Bendahara 2 - Bimbingan dan Konseling</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Anggota Lainnya -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">Humas</h4>
-          </div>
-
-          <!-- Anggota 2 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/ALDI.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Aldiasyah Ramadhan</h6>
-              <p class="small text-muted">Sistem Informasi</p>
-            </div>
-          </div>
-
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/BU WIWIT.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Wiwit Akmalina</h6>
-              <p class="small text-muted">Pendidikan Guru Paud</p>
-            </div>
-          </div>
-
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/BU LAILA.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Lailatul Zannah</h6>
-              <p class="small text-muted">Pendidikan Guru Paud</p>
-            </div>
-          </div>
-
-          <!-- Anggota 7 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/NISA.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Khoiruninisa</h6>
-              <p class="small text-muted">Pendidikan Guru SD</p>
-            </div>
-          </div>
-
-          <!-- Anggota Lainnya -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">Logistik</h4>
-          </div>
-
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/AYU.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Ayu Syafitri</h6>
-              <p class="small text-muted">Keperawatan</p>
-            </div>
-          </div>
-
-          <!-- Anggota 8 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/AULIA.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Aulia Suci Ramadhani</h6>
-              <p class="small text-muted">Akutansi</p>
-            </div>
-          </div>
-
-          <!-- Anggota 1 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/DZAKY.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Dzaky Ariya Saputra</h6>
-              <p class="small text-muted">Teknik Industri</p>
-            </div>
-          </div>
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/mae.png" alt="Anggota" class="img-fluid" />
-              <h6>Maesaroh</h6>
-              <p class="small text-muted">Manajemen</p>
-            </div>
-          </div>
-
-          <!-- Anggota Lainnya -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">Acara</h4>
-          </div>
-
-          <!-- Anggota 3 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/aan.png" alt="Anggota" class="img-fluid" />
-              <h6>Muhammad Farhan Hidayatullah</h6>
-              <p class="small text-muted">Ilmu Komunikasi</p>
-            </div>
-          </div>
-
-          <!-- Anggota 5 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/rohid.png" alt="Anggota" class="img-fluid" />
-              <h6>Rohid</h6>
-              <p class="small text-muted">Sistem Informasi</p>
-            </div>
-          </div>
-
-          <!-- Anggota 4 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/rian.png" alt="Anggota" class="img-fluid" />
-              <h6>Rian Firmansyah</h6>
-              <p class="small text-muted">Ilmu Komunikasi</p>
-            </div>
-          </div>
-
-          <!-- Anggota Lainnya -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">PDD</h4>
-          </div>
-
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/SITI.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Siti Najla Destria Apsari</h6>
-              <p class="small text-muted">Administrasi Publik</p>
-            </div>
-          </div>
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/AINI.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Hurul Aini</h6>
-              <p class="small text-muted">Ilmu Komunikasi</p>
-            </div>
-          </div>
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/JAJAAAAAAAAAAAAA.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Nazlah Azzahra</h6>
-              <p class="small text-muted">Ilmu Komunikasi</p>
-            </div>
-          </div>
-
-          <!-- Anggota Lainnya -->
-        <div class="row justify-content-center">
-          <div class="col-12 mb-4">
-            <h4 class="text-center">Konsumsi</h4>
-          </div>
-
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/KAYLA.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Kayla Rayane Purti</h6>
-              <p class="small text-muted">Manajemen</p>
-            </div>
-          </div>
-          <!-- Anggota 6 -->
-          <div class="col-6 col-md-4 col-lg-2 mb-4">
-            <div class="team-member text-center">
-              <img src="images/DEWI.jpg" alt="Anggota" class="img-fluid" />
-              <h6>Dewi Safitri</h6>
-              <p class="small text-muted">Pendidikan Guru SD</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Location Section -->
     <section class="py-5 bg-light">
@@ -787,34 +592,32 @@ img {
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5 class="mb-3">KKM Kelompok 20</h5>
-            <p>Universitas Bina Bangsa - Program Kuliah Kerja Mahasiswa 2025</p>
+            <h5>KKM Kelompok 20</h5>
             <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
+            <p>Universitas Bina Bangsa - Program KKM 2025</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
           <div class="col-lg-4 mb-4">
-            <h5 class="mb-3"></h5>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <h5 class="mb-3">Hubungi Kami</h5>
-            <p><i class="fas fa-map-marker-alt me-2"></i> Lingkungan Berigil & Kembang Kuning, Kelurahan Suralaya, Kota Cilegon</p>
-            <p><i class="fas fa-phone me-2"></i> +44 0987-6589</p>
-            <p><i class="fas fa-envelope me-2"></i> kkm20@binabangsa.ac.id</p>
-
             
           </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kontak Kami</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Kelurahan Suralaya, Kota Cilegon</p>
+            <p><i class="fas fa-envelope me-2"></i> kkm20@binabangsa.ac.id</p>
+            <p><i class="fas fa-phone me-2"></i> +62 123 4567 890</p>
+          </div>
         </div>
-        <hr class="mt-4 mb-3" />
-        <div class="row">
-          <div class="col-md-6 text-center text-md-start">
-            <p class="mb-0">&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
-          </div>
-          <div class="col-md-6 text-center text-md-end">
-            <p class="mb-0">Designed by Dityo Bagas Wicaksono</p>
-          </div>
+        <div class="copyright">
+          <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
         </div>
       </div>
     </footer>
