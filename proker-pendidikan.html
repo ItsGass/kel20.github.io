@@ -13,10 +13,12 @@
 
     <style>
       :root {
-        --primary-color: #131517;
-        --secondary-color: #050e13;
+        --primary-color: #090d11;
+        --secondary-color: #0d41c2;
+        --accent-color: #ff1900;
         --light-color: #ecf0f1;
         --dark-color: #131517;
+        --text-color: #34495e;
       }
 
       body {
@@ -131,61 +133,145 @@
           height: 160px;
         }
       }
+      /* Footer */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      footer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      footer p {
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      footer a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      footer a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
     </style>
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">KKM 20</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown"> Luaran </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="berita.html">Berita</a></li>
-                <li><a class="dropdown-item" href="artikel.html">Artikel</a></li>
-                <li><a class="dropdown-item" href="jurnal.html">Jurnal</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown"> Proker </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="proker-pendidikan.html">Pendidikan</a></li>
-                <li><a class="dropdown-item" href="proker-ekonomi.html">Ekonomi</a></li>
-                <li><a class="dropdown-item" href="proker-keagamaan.html">Keagamaan</a></li>
-                <li><a class="dropdown-item" href="proker-sosial.html">Sosial Budaya</a></li>
-                <li><a class="dropdown-item" href="proker-pemerintahan.html">Pemerintahan</a></li>
-                <li><a class="dropdown-item" href="proker-teknologi.html">Teknologi Tepat Guna</a></li>
-                <li><a class="dropdown-item" href="proker-hukum.html">Hukum</a></li>
-                <li><a class="dropdown-item" href="proker-kesehatan.html">Kesehatan</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown"> Dokumentasi </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="dokumentasi-week1.html">Week 1</a></li>
-                <li><a class="dropdown-item" href="dokumentasi-week2.html">Week 2</a></li>
-                <li><a class="dropdown-item" href="dokumentasi-week3.html">Week 3</a></li>
-                <li><a class="dropdown-item" href="dokumentasi-week4.html">Week 4</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Galeri</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Kontak</a>
-            </li>
-          </ul>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#090d11">
+    <div class="container">
+        <!-- Logo dan Brand dengan alignment presisi -->
+        <div class="d-flex align-items-center logo-brand-container">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+            <a class="navbar-brand ms-2" href="#">
+                <span class="kkm-text">KKM</span>
+                <span class="kkm-number">20</span>
+            </a>
         </div>
-      </div>
-    </nav>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="fas fa-users me-1"></i>Profile</a></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-newspaper me-1"></i> Luaran
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="berita.html"><i class="fas fa-bullhorn me-2"></i>Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html"><i class="fas fa-file-alt me-2"></i>Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html"><i class="fas fa-book me-2"></i>Jurnal</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-tasks me-1"></i>Proker
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="proker-pendidikan.html"><i class="fas fa-graduation-cap me-2"></i>Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html"><i class="fas fa-chart-line me-2"></i>Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html"><i class="fas fa-mosque me-2"></i>Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html"><i class="fas fa-hands-helping me-2"></i>Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html"><i class="fas fa-landmark me-2"></i>Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html"><i class="fas fa-laptop-code me-2"></i>Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html"><i class="fas fa-gavel me-2"></i>Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html"><i class="fas fa-heartbeat me-2"></i>Kesehatan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                        <i class="fas fa-camera me-1"></i>Dokumentasi
+                    </a>
+                    <ul class="dropdown-menu">
+                       <li><a class="dropdown-item" href="dokumentasi-week1.html"><i class="fas fa-calendar-week me-2"></i>Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html"><i class="fas fa-calendar-week me-2"></i>Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html"><i class="fas fa-calendar-week me-2"></i>Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html"><i class="fas fa-calendar-week me-2"></i>Week 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i>Kontak</a></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
     <!-- Content Section -->
     <div class="container">
@@ -200,7 +286,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/perizinan-sekolah.jpg" class="card-img-top" alt="Perizinan Sekolah" />
+              <img src="images/pendidikan1.jpg" class="card-img-top" alt="Perizinan Sekolah" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -232,7 +318,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/guru-pendamping.jpg" class="card-img-top" alt="Guru Pendamping" />
+              <img src="images/pendidikan2.jpg" class="card-img-top" alt="Guru Pendamping" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -264,7 +350,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/bimbel-inggris.jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
+              <img src="images/pendidikan3.jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -297,7 +383,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/perizinan-sekolah.jpg" class="card-img-top" alt="Perizinan SMP" />
+              <img src="images/pendidikan4.jpg" class="card-img-top" alt="Perizinan SMP" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -329,7 +415,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/mpls.jpg" class="card-img-top" alt="MPLS" />
+              <img src="images/pendidikan5.jpg" class="card-img-top" alt="MPLS" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -366,7 +452,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/bimbel-arab.jpg" class="card-img-top" alt="Bimbel Bahasa Arab" />
+              <img src="images/pendidikan6.jpg" class="card-img-top" alt="Bimbel Bahasa Arab" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -401,7 +487,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/asesmen.jpg" class="card-img-top" alt="Asesmen Diagnostik" />
+              <img src="images/pendidikan7.jpg" class="card-img-top" alt="Asesmen Diagnostik" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -433,7 +519,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/mpls-penutupan.jpg" class="card-img-top" alt="Penutupan MPLS" />
+              <img src="images/pendidikan8.jpg" class="card-img-top" alt="Penutupan MPLS" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -465,7 +551,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/narkoba.jpg" class="card-img-top" alt="Penyuluhan Narkoba" />
+              <img src="images/pendidikan9.jpg" class="card-img-top" alt="Penyuluhan Narkoba" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -498,7 +584,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/bimbel-inggris2.jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
+              <img src="images/pendidik .jpg" class="card-img-top" alt="Bimbel Bahasa Inggris" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -530,7 +616,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/pendampingan-kelas.jpg" class="card-img-top" alt="Pendampingan Kelas" />
+              <img src="images/pendidikan10.jpg" class="card-img-top" alt="Pendampingan Kelas" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -562,7 +648,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/kerja-bakti.jpg" class="card-img-top" alt="Kerja Bakti" />
+              <img src="images/pendidikan11.jpg" class="card-img-top" alt="Kerja Bakti" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -595,7 +681,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/mpls-penutupan2.jpg" class="card-img-top" alt="Penutupan MPLS" />
+              <img src="images/pendidikan12.jpg" class="card-img-top" alt="Penutupan MPLS" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -627,7 +713,7 @@
         <div class="col-md-6 col-lg-4 mb-4">
           <div class="card activity-card">
             <div class="card-img-container">
-              <img src="images/pendampingan.jpg" class="card-img-top" alt="Pendampingan Kelas" />
+              <img src="images/pendidikan14.jpg" class="card-img-top" alt="Pendampingan Kelas" />
             </div>
             <div class="card-body">
               <span class="card-category">Pendidikan & Keterampilan</span>
@@ -658,17 +744,33 @@
       </div>
     </div>
 
-    <!-- Footer (Sama seperti website utama) -->
-    <footer class="bg-dark text-white py-4 mt-5">
+    <!-- Footer -->
+    <footer>
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-lg-4 mb-4">
             <h5>KKM Kelompok 20</h5>
+            <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
             <p>Universitas Bina Bangsa - Program KKM 2025</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
-          <div class="col-md-6 text-md-end">
-            <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+          <div class="col-lg-4 mb-4">
+            
           </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kontak Kami</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Kelurahan Suralaya, Kota Cilegon</p>
+            <p><i class="fas fa-envelope me-2"></i> kkm20@binabangsa.ac.id</p>
+            <p><i class="fas fa-phone me-2"></i> +62 123 4567 890</p>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
         </div>
       </div>
     </footer>
