@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artikel KKM - Kelompok 20</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --primary-color: #090d11;
+        --secondary-color: #0d41c2;
+        --accent-color: #ff0000;
+        --light-color: #ecf0f1;
+        --dark-color: #131517;
+        --text-color: #34495e;
+      }
+
+      /* Fix horizontal overflow */
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Open Sans', sans-serif;
+        color: var(--text-color);
+        background-color: #f9f9f9;
+        line-height: 1.6;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      /* Responsive team structure */
+      @media (max-width: 992px) {
+        .team-member {
+          flex: 0 0 33.333%;
+          max-width: 33.333%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .team-member {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+
+        .benfit-card {
+          margin-bottom: 15px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .team-member {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+
+        .container {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+      /* Tambahkan ini di bagian CSS media query untuk mobile */
+  @media (max-width: 576px) {
+    #profil {
+      padding-top: 6rem !important; /* Menyesuaikan tinggi navbar */
+    }
+  }
+
+      /* Ensure images don't overflow */
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Navbar Styles */
+      .custom-navbar {
+        background-color: var(--primary-color) !important;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .custom-navbar.scrolled {
+        padding: 10px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: white !important;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .nav-link {
+        font-weight: 500;
+        padding: 8px 15px !important;
+        color: rgba(255,255,255,0.8) !important;
+        transition: all 0.3s;
+      }
+
+      .nav-link:hover, .nav-link:focus {
+        color: white !important;
+        transform: translateY(-2px);
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 0.5rem;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
+      .dropdown-menu {
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        background-color: var(--primary-color);
+      }
+
+      .dropdown-item {
+        color: rgba(255,255,255,0.8);
+        padding: 8px 20px;
+        transition: all 0.3s;
+      }
+
+      .dropdown-item:hover {
+        background-color: var(--secondary-color);
+        color: white;
+        transform: translateX(5px);
+      }
+
+      /* Profile Section */
+      #profil {
+        padding: 6rem 0 4rem;
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #profil::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      #profil h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      #profil h2::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: var(--secondary-color);
+        border-radius: 2px;
+      }
+
+      #profil p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        max-width: 800px;
+      }
+
+      #profil h3 {
+        font-size: 1.8rem;
+        margin: 2.5rem 0 1.5rem;
+        color: var(--secondary-color);
+      }
+
+      #profil ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      #profil ul li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
+      }
+
+      #profil ul li::before {
+        content: "•";
+        color: var(--accent-color);
+        font-size: 1.5rem;
+        position: absolute;
+        left: 0;
+        top: -5px;
+      }
+
+      #profil strong {
+        color: var(--primary-color);
+      }
+
+      /* Team Section */
+      .section-titlee {
+        font-size: 2.2rem;
+        margin-bottom: 3rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-titlee::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        border-radius: 2px;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 100%;
+        border: none;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card h4 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .product-card h4::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 2px;
+        background-color: var(--secondary-color);
+      }
+
+      .product-image {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 1.5rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid #f1f1f1;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .product-card:hover .product-image {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card h5 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .product-card .text-muted {
+        color: #7f8c8d !important;
+        font-size: 0.95rem;
+      }
+
+      /* Team Member Cards */
+      .team-member {
+        margin-bottom: 30px;
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+
+      .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid white;
+        margin-bottom: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .team-member:hover img {
+        transform: scale(1.05);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        border-color: var(--secondary-color);
+      }
+
+      .team-member h5, .team-member h6 {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: var(--primary-color);
+      }
+
+      .team-member .text-muted {
+        color: #7f8c8d !important;
+        font-size: 0.85rem;
+      }
+
+      /* Section Headers */
+      .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-header h4 {
+        font-size: 1.8rem;
+        display: inline-block;
+        padding: 0 20px;
+        background: #f9f9f9;
+        position: relative;
+        z-index: 1;
+        color: var(--secondary-color);
+      }
+
+      .section-header::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background-color: #e0e0e0;
+        z-index: 0;
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 60px 0 20px;
+        position: relative;
+      }
+
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      }
+
+      footer h5 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      footer p {
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      footer a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      footer a:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        margin-top: 1.5rem;
+      }
+
+      .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s;
+      }
+
+      .social-icons a:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        border-top: 1px solid rgba(255,255,255,0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        opacity: 0.7;
+        font-size: 0.9rem;
+      }
+
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 999;
+      }
+
+      .back-to-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-5px);
+      }
+
+      /* Animation */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        #profil {
+          padding: 5rem 0 3rem;
+        }
+        
+        .product-card {
+          padding: 20px;
+        }
+        
+        .product-image {
+          width: 150px;
+          height: 150px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        #profil h2 {
+          font-size: 1.8rem;
+        }
+        
+        #profil h3 {
+          font-size: 1.5rem;
+        }
+        
+        .section-titlee {
+          font-size: 1.8rem;
+        }
+        
+        .team-member img {
+          width: 120px;
+          height: 120px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        #profil {
+          padding: 4rem 0 2rem;
+        }
+        
+        #profil h2 {
+          font-size: 1.6rem;
+        }
+        
+        #profil p {
+          font-size: 1rem;
+        }
+        
+        .section-titlee {
+          font-size: 1.6rem;
+          margin-bottom: 2rem;
+        }
+        
+        .product-card {
+          padding: 15px;
+        }
+      }
+      .navbar-logo {
+        max-height: 50px !important;
+        height: auto !important;
+        width: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="Universitas Bina Bangsa" class="navbar-logo img-fluid" />
+          <i class=" me-2"></i>KKM 20
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="profile.html"><i class="fas fa-users me-1"></i>Profile</a></a>
+                </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="luaranDropdown" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-newspaper me-1"></i> Luaran
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="berita.html"><i class="fas fa-bullhorn me-2"></i>Berita</a></li>
+                <li><a class="dropdown-item" href="artikel.html"><i class="fas fa-file-alt me-2"></i>Artikel</a></li>
+                <li><a class="dropdown-item" href="jurnal.html"><i class="fas fa-book me-2"></i>Jurnal</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="prokerDropdown" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-tasks me-1"></i> Proker
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="proker-pendidikan.html"><i class="fas fa-graduation-cap me-2"></i>Pendidikan</a></li>
+                <li><a class="dropdown-item" href="proker-ekonomi.html"><i class="fas fa-chart-line me-2"></i>Ekonomi</a></li>
+                <li><a class="dropdown-item" href="proker-keagamaan.html"><i class="fas fa-mosque me-2"></i>Keagamaan</a></li>
+                <li><a class="dropdown-item" href="proker-sosial.html"><i class="fas fa-hands-helping me-2"></i>Sosial Budaya</a></li>
+                <li><a class="dropdown-item" href="proker-pemerintahan.html"><i class="fas fa-landmark me-2"></i>Pemerintahan</a></li>
+                <li><a class="dropdown-item" href="proker-teknologi.html"><i class="fas fa-laptop-code me-2"></i>Teknologi Tepat Guna</a></li>
+                <li><a class="dropdown-item" href="proker-hukum.html"><i class="fas fa-gavel me-2"></i>Hukum</a></li>
+                <li><a class="dropdown-item" href="proker-kesehatan.html"><i class="fas fa-heartbeat me-2"></i>Kesehatan</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dokumentasiDropdown" role="button" data-bs-toggle="dropdown">
+                <i class="fas fa-camera me-1"></i> Dokumentasi
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="dokumentasi-week1.html"><i class="fas fa-calendar-week me-2"></i>Week 1</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week2.html"><i class="fas fa-calendar-week me-2"></i>Week 2</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week3.html"><i class="fas fa-calendar-week me-2"></i>Week 3</a></li>
+                <li><a class="dropdown-item" href="dokumentasi-week4.html"><i class="fas fa-calendar-week me-2"></i>Week 4</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-envelope me-1"></i> Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section id="profil" class="animate">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h2>Profil Kelompok KKM</h2>
+            <p>
+              Kami adalah Kelompok Kegiatan Kuliah Kerja Mahasiswa (KKM) dari 
+              <strong>Universitas Bina Bangsa</strong> yang melaksanakan pengabdian masyarakat di 
+              <strong>Kelurahan Suralaya, Kecamatan Pulomerak, Kota Cilegon</strong>, selama bulan 
+              <strong>Juli – Agustus 2025</strong>.
+            </p>
+
+            <p>
+              Kegiatan ini merupakan bagian dari penerapan Tri Dharma Perguruan Tinggi, khususnya dalam bidang 
+              <em>pengabdian kepada masyarakat</em>. Melalui kolaborasi antaranggota tim dan dukungan dari masyarakat, 
+              kami menghadirkan berbagai program kerja yang menyentuh aspek pendidikan, ekonomi, lingkungan, dan sosial budaya.
+            </p>
+
+            <p>
+              Dengan semangat kebersamaan dan tanggung jawab sosial, kami berupaya memberikan kontribusi nyata yang 
+              berdampak positif bagi masyarakat setempat.
+            </p>
+
+            <h3>Informasi Kelompok</h3>
+            <ul>
+              <li><strong>Asal Perguruan Tinggi:</strong> Universitas Bina Bangsa</li>
+              <li><strong>Nama Kelompok:</strong> Kelompok KKM 20</li>
+              <li><strong>Lokasi:</strong> Kelurahan Suralaya, Kota Cilegon</li>
+              <li><strong>Waktu Pelaksanaan:</strong> Juli – Agustus 2025</li>
+              <li><strong>Dosen Pembimbing:</strong> Tabroni S.T, M.M</li>
+              <li><strong>Ketua Kelompok:</strong> Dityo Bagas Wicaksono</li>
+              <li><strong>Jumlah Anggota:</strong> 20 Mahasiswa</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Structure Section -->
+    <section class="row text-center py-5 bg-light">
+      <div class="container">
+        <h3 class="section-titlee text-center animate ">Struktur Tim</h3>
+
+        <!-- Dosen Pembimbing -->
+        <div class="row justify-content-center mb-5 animate delay-1">
+          <div class="col-md-8 col-lg-6">
+            <div class="product-card text-center">
+              <h4 class="mb-4">Dosen Pembimbing Lapangan</h4>
+              <div class="product-image mb-3">
+                <img src="images/pak.png" alt="Dosen Pembimbing" class="img-fluid" />
+              </div>
+              <h5>Tabroni S.T, M.M</h5>
+              <p class="text-muted">Dosen Pembimbing Lapangan</p>
+              <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ketua -->
+        <div class="row justify-content-center mb-5 animate delay-1">
+          <div class="col-md-8 col-lg-6">
+            <div class="product-card text-center">
+              <h4 class="mb-4">Ketua Kelompok</h4>
+              <div class="product-image mb-3">
+                <img src="images/bagas.jpg" alt="Ketua" class="img-fluid" />
+              </div>
+              <h5>Dityo Bagas Wicaksono</h5>
+              <p class="text-muted">Sistem Informasi</p>
+              <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anggota Inti -->
+        <div class="row justify-content-center animate delay-2">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>Anggota Inti</h4>
+            </div>
+          </div>
+
+          <!-- Wakil Ketua -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="team-member text-center">
+              <img src="images/ajay.jpg" alt="Wakil Ketua" class="img-fluid" />
+              <h5>Muhamad Fajar Ismail</h5>
+              <p class="text-muted">Wakil Ketua - Hukum</p>
+            </div>
+          </div>
+
+          <!-- Sekretaris 1 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="team-member text-center">
+              <img src="images/divi.png" alt="Sekretaris 1" class="img-fluid" />
+              <h5>Divia Yuni Purwanti</h5>
+              <p class="text-muted">Sekretaris 1 - Manajemen</p>
+            </div>
+          </div>
+
+          <!-- Sekretaris 2 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="team-member text-center">
+              <img src="images/NAZWA.jpg" alt="Sekretaris 2" class="img-fluid" />
+              <h5>Nazwa Baidillah</h5>
+              <p class="text-muted">Sekretaris 2 - Pendidikan Bahasa Inggris</p>
+            </div>
+          </div>
+
+          <!-- Bendahara 1 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="team-member text-center">
+              <img src="images/ACA.jpg" alt="Bendahara 1" class="img-fluid" />
+              <h5>Marsya Diva Ramadhania</h5>
+              <p class="text-muted">Bendahara 1 - Ilmu Komputer</p>
+            </div>
+          </div>
+
+          <!-- Bendahara 2 -->
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="team-member text-center">
+              <img src="images/INDAH.jpg" alt="Bendahara 2" class="img-fluid" />
+              <h5>Indah Syafitri</h5>
+              <p class="text-muted">Bendahara 2 - Bimbingan dan Konseling</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Humas Section -->
+        <div class="row justify-content-center mt-5 animate delay-2">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>Humas</h4>
+            </div>
+          </div>
+
+          <!-- Anggota 2 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/ALDI.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Aldiasyah Ramadhan</h6>
+              <p class="small text-muted">Sistem Informasi</p>
+            </div>
+          </div>
+
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/BU WIWIT.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Wiwit Akmalina</h6>
+              <p class="small text-muted">Pendidikan Guru Paud</p>
+            </div>
+          </div>
+
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/BU LAILA.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Lailatul Zannah</h6>
+              <p class="small text-muted">Pendidikan Guru Paud</p>
+            </div>
+          </div>
+
+          <!-- Anggota 7 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/NISA.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Khoiruninisa</h6>
+              <p class="small text-muted">Pendidikan Guru SD</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Logistik Section -->
+        <div class="row justify-content-center mt-5 animate delay-2">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>Logistik</h4>
+            </div>
+          </div>
+
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/AYU.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Ayu Syafitri</h6>
+              <p class="small text-muted">Keperawatan</p>
+            </div>
+          </div>
+
+          <!-- Anggota 8 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/AULIA.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Aulia Suci Ramadhani</h6>
+              <p class="small text-muted">Akutansi</p>
+            </div>
+          </div>
+
+          <!-- Anggota 1 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/DZAKY.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Dzaky Ariya Saputra</h6>
+              <p class="small text-muted">Teknik Industri</p>
+            </div>
+          </div>
+          
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/mae.png" alt="Anggota" class="img-fluid" />
+              <h6>Maesaroh</h6>
+              <p class="small text-muted">Manajemen</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Acara Section -->
+        <div class="row justify-content-center mt-5 animate delay-3">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>Acara</h4>
+            </div>
+          </div>
+
+          <!-- Anggota 3 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/aan.png" alt="Anggota" class="img-fluid" />
+              <h6>Muhammad Farhan Hidayatullah</h6>
+              <p class="small text-muted">Ilmu Komunikasi</p>
+            </div>
+          </div>
+
+          <!-- Anggota 5 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/rohid.png" alt="Anggota" class="img-fluid" />
+              <h6>Rohid</h6>
+              <p class="small text-muted">Sistem Informasi</p>
+            </div>
+          </div>
+
+          <!-- Anggota 4 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/rian.png" alt="Anggota" class="img-fluid" />
+              <h6>Rian Firmansyah</h6>
+              <p class="small text-muted">Ilmu Komunikasi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PDD Section -->
+        <div class="row justify-content-center mt-5 animate delay-3">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>PDD</h4>
+            </div>
+          </div>
+
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/SITI.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Siti Najla Destria Apsari</h6>
+              <p class="small text-muted">Administrasi Publik</p>
+            </div>
+          </div>
+          
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/AINI.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Hurul Aini</h6>
+              <p class="small text-muted">Ilmu Komunikasi</p>
+            </div>
+          </div>
+          
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/JAJAAAAAAAAAAAAA.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Nazlah Azzahra</h6>
+              <p class="small text-muted">Ilmu Komunikasi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Konsumsi Section -->
+        <div class="row justify-content-center mt-5 animate delay-3">
+          <div class="col-12 mb-4">
+            <div class="section-header">
+              <h4>Konsumsi</h4>
+            </div>
+          </div>
+
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/KAYLA.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Kayla Rayane Purti</h6>
+              <p class="small text-muted">Manajemen</p>
+            </div>
+          </div>
+          
+          <!-- Anggota 6 -->
+          <div class="col-6 col-md-4 col-lg-2 mb-4">
+            <div class="team-member text-center">
+              <img src="images/DEWI.jpg" alt="Anggota" class="img-fluid" />
+              <h6>Dewi Safitri</h6>
+              <p class="small text-muted">Pendidikan Guru SD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>KKM Kelompok 20</h5>
+            <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
+            <p>Universitas Bina Bangsa - Program KKM 2025</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Quick Links</h5>
+            
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Kontak Kami</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> Kelurahan Suralaya, Kota Cilegon</p>
+            <p><i class="fas fa-envelope me-2"></i> kkm20@binabangsa.ac.id</p>
+            <p><i class="fas fa-phone me-2"></i> +62 123 4567 890</p>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+      // Navbar scroll effect
+      window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.custom-navbar');
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Back to top button
+      const backToTopButton = document.querySelector('.back-to-top');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add('active');
+        } else {
+          backToTopButton.classList.remove('active');
+        }
+      });
+
+      // Smooth scrolling for all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Animation on scroll
+      const animateElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+
+      animateElements.forEach(element => {
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
