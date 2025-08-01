@@ -201,6 +201,8 @@ img {
         margin-bottom: 15px;
       }
 
+      
+
       /* Footer */
       footer {
         background-color: var(--primary-color);
@@ -325,6 +327,51 @@ img {
           padding: 8px 10px !important;
         }
       }
+
+      footer {
+    background: linear-gradient(to right, #000000, #1d3551);
+    color: white;
+    padding: 60px 0 40px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .footer h5 {
+    font-weight: 600;
+  }
+
+  .social-icons a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 24px;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #e6f421;
+  }
+
+  .col-lg-4 {
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .col-lg-4 {
+      margin-bottom: 40px;
+    }
+  }
     </style>
   </head>
   <body>
@@ -592,41 +639,44 @@ Kegiatan ini dilaksanakan oleh mahasiswa Universitas Bina Bangsa dengan harapan 
     </section>
 
     <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4 mb-4">
-            <h5>Universitas Bina Bangsa</h5>
-            <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
-            <p></p>
-            <div class="social-icons">
-              
-              <a href="https://binabangsa.ac.id/"><i class="fas fa-globe"></i></a>
-              <a href="https://www.instagram.com/uniba_official?utm_source=ig_web_button_share_sheet&igsh=MTRucDAyZXhwNzBzOA=="><i class="fab fa-instagram"></i></a>
-              <a href="UC6kI9HVhNi74XGsIC-PgNRg"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-            
-          </div>
-          <div class="col-lg-4 mb-4">
-            <h5>KKM Kelompok 20</h5>
-            <img src="images/logo.png" alt="" class="img-fluid mt-3" style="max-width: 200px" />
-            <p></p>
-            <div class="social-icons">
-              
-              <a href="https://www.kkm20.site/"><i class="fas fa-globe"></i></a>
-              <a href="https://www.instagram.com/kkm20_suralaya?igsh=MTd5cnJoNjhxOWdxaw=="><i class="fab fa-instagram"></i></a>
-              <a href="https://www.tiktok.com/@kkm20_pulomerak?_t=ZS-8yQYhpJblOU&_r=1"><i class="fab fa-tiktok"></i></a>
-              <a href="https://youtube.com/@kkm.kelompok20uniba?si=TDYuq_qXLZ3GGFKa"><i class="fab fa-youtube"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+<footer>
+  <div class="container">
+    <div class="row">
+      <!-- UNIBA -->
+      <div class="col-lg-4 mb-4 text-center">
+        <h5>Universitas Bina Bangsa</h5>
+        <img src="images/uniba.png" alt="Universitas Bina Bangsa" class="img-fluid mt-3" style="max-width: 200px" />
+        <p class="mt-3">Kampus unggul di Banten, mencetak generasi berdaya saing global.</p>
+        <div class="social-icons mt-2">
+          <a href="https://binabangsa.ac.id/" target="_blank"><i class="fas fa-globe"></i></a>
+          <a href="https://www.instagram.com/uniba_official?utm_source=ig_web_button_share_sheet&igsh=MTRucDAyZXhwNzBzOA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@UNIBAOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-    </footer>
+
+      <!-- Spacer Column -->
+      <div class="col-lg-4 mb-4 d-none d-lg-block"></div>
+
+      <!-- KKM 20 -->
+      <div class="col-lg-4 mb-4 text-center">
+        <h5>KKM Kelompok 20</h5>
+        <img src="images/logo.png" alt="Logo KKM 20" class="img-fluid mt-3" style="max-width: 200px" />
+        <p class="mt-3">Tim mahasiswa UNIBA aktif dalam kegiatan sosial dan pemberdayaan di Suralaya & Pulomerak.</p>
+        <div class="social-icons mt-2">
+          <a href="https://www.kkm20.site/" target="_blank"><i class="fas fa-globe"></i></a>
+          <a href="https://www.instagram.com/kkm20_suralaya?igsh=MTd5cnJoNjhxOWdxaw==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@kkm20_pulomerak?_t=ZS-8yQYhpJblOU&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://youtube.com/@kkm.kelompok20uniba?si=TDYuq_qXLZ3GGFKa" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright mt-4 text-center">
+      <p>&copy; 2025 KKM Kelompok 20. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
 
     <!-- Bootstrap JS -->
 
